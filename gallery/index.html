@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <!--  <title>Solar System</title> -->
+  <!--  <link href="gallerystyle.css" rel="stylesheet">  -->
+   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'> 
+
+   <style>
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: 0;
+  }
+
+  html,
+  body {
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+  }
+
+  body {
+      background-image: url("/website/dist/assets/Milkyway-e0b32971.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+  #gui {
+      position: absolute;
+      right: 0;
+      top: 0;
+  }
+
+  /*CSS styles for the solar system*/
+  #solar-system {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      z-index: 0;
+  }
+
+  /*CSS styles for the solar system*/
+  #earth-system {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      z-index: 0;
+  }
+
+
+  /* CSS styles for the orbit controls */
+  #three-orbit-controls {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: auto;
+  }
+
+  .webgl {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+  }
+
+  .music {
+      margin-right: 2rem;
+  }
+
+  .tomo {
+      margin-left: 2rem;
+  }
+
+  nuv {
+      justify-content: space-between;
+      font-family: Arial, sans-serif;
+      color: rgb(24, 45, 228);
+      z-index: 2;
+      padding: 1rem 1rem;
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      font-size: 1rem;
+      left: 15%;
+      bottom: 95%;
+      transform: translate(-50%, 0);
+  }
+
+  nuv a {
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      color: rgb(24, 45, 228);
+      font-weight: bold;
+  }
+
+  nav {
+      font-family: Arial, sans-serif;
+      color: white;
+      z-index: 2;
+      position: relative;
+      padding: 4rem 8rem;
+      display: flex;
+      justify-content: space-between;
+  }
+
+
+  nav a {
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+  }
+
+  nav c {
+      font-family: Arial, sans-serif;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+  }
+
+  nav ul {
+      font-family: Arial, sans-serif;
+      list-style: none;
+      display: flex;
+      gap: 4rem;
+  }
+
+  .title {
+      font-family: Arial, sans-serif;
+      color: white;
+      z-index: 2;
+      position: absolute;
+      font-size: 3rem;
+      left: 50%;
+      top: 1%;
+      transform: translate(-50%, -1%);
+  }
+
+
+
+
+
+
+
+
+  #exit-clipping-button {
+      margin-bottom: 10px;
+      margin-right: 10px;
+      font-family: Arial, sans-serif;
+      background-color: #2903b1;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+  }
+
+  /* .model-gallery {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+} */
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+    
+        .video {
+            width: 100%;
+            margin: 1%;
+            text-align: center;
+            /* box-shadow: 1px 1px 5px rgb(255, 255, 255); */
+        }
+    
+/*         video {
+            width: 100%;
+            border-radius: 10px;
+            
+        } */
+    
+        .video-title {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+        }
+    
+        .video-description {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: rgb(255, 255, 255);
+            text-align: justify;
+        }
+
+        .info{
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+   </style>
+</head>
+
+<body>
+    <canvas class="webgl"></canvas> 
+    <audio id="bg-music" loop> 
+        <source src="/website/dist/assets/Aurora_Jonny_Easton-c4f70648.mp3" type="audio/mpeg">
+        <!--  <embed src="Sounds/Aurora_Jonny_Easton.mp3" loop="true" autostart="true" width="2" height="0"> -->
+    </audio>
+    <nuv>
+        <div class="music">
+            <a href="https://www.youtube.com/watch?v=Ct44WnxlPC0">Music: Jonny Easton</a>
+        </div>
+    </nuv>
+    <nav>
+        <!-- <div id="gui"></div> -->
+       <!--  <a href="index.html" class="Back-to-the-main-page">About Me</a> -->
+        <a href="../index.html" class="back home-link">back to home</a>
+        <!-- <a href="./gallery.html" class="model-gallery-link">Model Gallery</a> -->
+    </nav>
+
+<p class="info">Models below are built using ASPECT code and visualized with paraview</p>
+
+            <div class="video-container">
+                <div class="video">
+
+                <div class="video">
+                    <h2 class="video-title">Slab buckling</h2>
+                    <iframe src="https://www.youtube.com/embed/7YxtL2Dl9H0" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="video-description">A cold mantle is sinking in an adiabatic mantle. the jump of viscosity at 660 km depth causes the slab to buckle on
+                    itself. Video shows the compositional phases and strain rate.</p>
+                    </div>
+                </div>
+                <div class="video">
+                    <h2 class="video-title">Flat subduction</h2>
+                    <iframe src="https://www.youtube.com/embed/bgVbXprFRz0" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="video-description">The oceanic plate subducts with a low angle causing the flat subduction. When the slab steepens back, the stress is
+                    accomodated by the deformation of overriding plate. Flat subduction is a highly debated process that could have
+                    contributed to the formation of the Andes and Laramide.</p>
+                    </div>
+                <div class="video">
+                    <h2 class="video-title">Subduction & surface processes</h2>
+                    <iframe src="https://www.youtube.com/embed/75qr-J6KyNs" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="video-description">Surface processes are important at convergent boundaries. Sediments are eroded and transported to the trench, which
+                    lubricate the subduction interface. Additionally, erosion changes the topographic stress and have consequences on the
+                    asymmetric development of the deformation and the topography, forming low angle thrust faults in the Foreland. The video
+                    shows 40 Ma of topographic evolution up to the development of a plateau style orogenesis similar to the Central Andes
+                    using the ASPECT - FastScape coupling.</p>
+                    </div>
+                <div class="video">
+                    <h2 class="video-title">Subduction dynamics and continent deformation</h2>
+                    <iframe src="https://www.youtube.com/embed/DCoZ0RLmczw" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="video-description">Subduction dynamics is key to understand the overall picture behind the formation of subduction type orogenesis (e.g.,
+                    the Andean orogeny). This video shows how deep processes (flat subduction, buckling) of the oceanic plate relate to
+                    important deformation phases of the overriding plate.</p>
+                    </div>
+                <div class="video">
+                    <h2 class="video-title">Subduction dynamics and continent deformation</h2>
+                    <img src="/website/dist/assets/datadriven_model-95f1ad88.png" alt="Image 1">
+                    <p class="video-description">I utilitize published present day lithospheric structural model in order to investigate the effect of slab geometry and
+                    overrididing plate inherited structures on the localization of the strain..</p>
+                </div>
+            </div>
+
+
+
+
+    <h1 class="title">Michael Pons</h1>
+    <div id="solar-system"></div>
+    <div id="earth-system"></div>
+<script>    window.addEventListener('click', () => {
+        document.getElementById("bg-music").play();
+    })
+    </script>
+    <!-- <script type="module" src="main.js"></script> -->
+   <!-- <script type="module" src="Gallery.js"></script>--> -->
+    <!-- <script type="module" src="Example_pointcloud.js"></script> -->
+
+</body>
+
+</html>
+
+
+                    <!-- <video src="https://www.youtube.com/embed/7YxtL2Dl9H0" muted></video> -->
+                    <!-- <iframe src="https://www.youtube.com/embed/7YxtL2Dl9H0" frameborder="0"
+                                            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                    <!--      <p>A cold mantle is sinking in an adiabatic mantle. the jump of viscosity at 660 km depth causes the
+                                            slab to
+                                            buckle onitself. Video shows the compositional phases and strain rate.</p> -->
+
