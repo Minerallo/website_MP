@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Solar System</title>
+  <!-- <link href="./style.css" rel="stylesheet"> -->
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <script type="module" crossorigin src="/assets/main-a69dc38c.js"></script>
+  <link rel="stylesheet" href="/assets/index-c8dca203.css">
+</head>
+
+<body>
+  <canvas class="webgl"></canvas>
+      <audio id="bg-music" loop>
+        <source src="/assets/Aurora_Jonny_Easton-c4f70648.mp3" type="audio/mpeg">
+        <!--  <embed src="Sounds/Aurora_Jonny_Easton.mp3" loop="true" autostart="true" width="2" height="0"> -->
+      </audio>
+      <nuv>
+        <div class="music">
+          <a href="https://www.youtube.com/watch?v=Ct44WnxlPC0">Music: Jonny Easton</a>
+        </div>
+        <div class="tomo">
+          <a href="https://www.earth.ox.ac.uk/~univ4152/downloads_sp12rts.html">Tomography: Paula Koelemeijer</a>
+        </div>
+      </nuv>
+  <nav>
+    <div id="gui"></div>
+    <div id="button-container">
+      <!-- <button id="topography-system-button">Topography system</button> -->
+      <button id="earth-system-button">Earth System</button>
+      <button id="solar-system-button">Solar System</button>
+    </div>
+    <div id="buttons-of-earth-system">
+      <button id="cut-earth-button">Display mantle structures</button>
+      <button id="exit-clipping-button">Exit mantle structures</button>
+    </div>
+    <a href="#" class="about-me-link">About Me</a>
+    <a href="#" class="cv-link">View my CV</a>
+    <a href="#" class="research-link">Research</a>
+    <a href="#" class="publications-link">Publications</a>
+    <a href="./gallery/index.html" class="model-gallery-link">Model Gallery</a>
+    <a href="#" class="social-networks-link">Social Networks</a>
+    
+    <div class="popup" id="cv-popup">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h2>My Curriculum Vitae</h2>
+          <a href="#" class="close-popup">X</a>
+        </div>
+        <div class="popup-body">
+          <!-- <div class="text-container"> -->
+                <iframe src="./Documents/CV_Mika.pdf"></iframe>
+                <a href="./Documents/CV_Mika.pdf" download class="download-link">Download my CV</a>
+                <!-- </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="publications-popup">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h2>Publications and talks </h2>
+          <a href="#" class="close-popup">X</a>
+        </div>
+        <div class="popup-body">
+          <div class="text-container" style="height: 80vh; overflow-y: scroll;">
+          <h3>Publications</h3>
+          <ol>
+            <li>Pons, M., (Thesis submitted, 16.11.2022), The nature of the tectonic shortening in Central Andes.</li>
+            <li>Pons, M., Rodriguez Piceda, C., Sobolev, S.V., Scheck-Wenderoth, M., & Barrionuevo, M, (In preparation -
+              Tectonics), The role of inherited structures and subduction geometry on the strain localization in Southern
+              Central Andes.</li>
+            <li>Pons, M., Rodriguez Piceda, C., Sobolev, S.V., & Scheck-Wenderoth, M, (In preparation - Nature Com), Flat
+              slab migration induces large scale crustal rotation in Southern Central Andes.</li>
+            <li>Pons, M., Sobolev, S. V., Liu, S., & Neuharth, D. (2022). Hindered trench migration due to slab steepening
+              controls the formation of the Central Andes. Journal of Geophysical Research: Solid Earth, e2022JB025229.
+            </li>
+            <li>Rodriguez Piceda, C., Scheck-Wenderoth, M., Bott, J., Gomez Dacal, M. L., Cacace, M., Pons, M., ... &
+              Strecker, M. R. (2022). Controls of the lithospheric thermal field of an ocean-continent subduction zone:
+              the southern Central Andes. Lithosphere, 2022(1), 2237272.</li>
+            <li>Liu, S., Sobolev, S. V., Babeyko, A. Y., & Pons, M. (2022). Controls of the Foreland Deformation Pattern in
+              the Orogen‐Foreland Shortening System: Constraints from High‐Resolution Geodynamic Models. Tectonics, 41(2),
+              e2021TC007121.</li>
+          </ol>
+            <h3>Talks</h3>
+            <ol>
+            <li>Pons, M., Sobolev, S.V., Piceda, C. R., Sibiao, L., Neuharth, D., Scheck-Wenderoth, M., & Strecker, M.
+              (2022, August). Plate interaction, subduction dynamics the role of the flat-slab subduction in the Central
+              Andes. Ada Lovelace workshop 2022.</li>
+            <li>Pons, M., Sobolev, S.V., Sibiao, L., & Neuharth, D, (2022, May). Variability of the shortening rate in
+              Central Andes controlled by subduction dynamics and interaction between slab and overriding plate. EGU
+              conference 2022.</li>
+            <li>Pons, M., & Sobolev, S.V., (2021, September). Control of subduction dynamics on shortening magnitude in the
+              Central Andes: a thermomechanical modeling approach. GEOMOD conference 2021.</li>
+            <li>Pons, M., & Sobolev, S.V., (2021, August). Interplay between the shortening magnitude and subduction
+              dynamics in the Central Andes. Geodynamics WS 2021.</li>
+            <li>Piceda, C. R., Scheck-Wenderoth, M., Bott, J., Dacal, M. L. G., Pons, M., Prezzi, C., & Strecker, M. (2021).
+              Unravelling the thermal state of the southern Central Andes and its controlling factors (No. EGU21-5214).
+              Copernicus Meetings.</li>
+            <li>Pons, M., & Sobolev, S., (2020, May). The nature of the North-South change of the magnitude of tectonic
+              shortening in Central Andes at Altiplano-Puna latitudes: a thermomechanical modeling approach. In EGU
+              General Assembly Conference Abstracts (p. 8177).</li>
+            <li>Pons, M., & Sobolev, S.V., (2019). The nature of the North-South change of the magnitude of tectonic
+              shortening in Central Andes at Altiplano-Puna latitudes: a thermomechanical modeling approach. 25th
+              Latin-American Colloquium (LAC), Hamburg, Germany. Program and Abstracts (p. 61).</li>
+            <li>Pons, M., Sobolev, S.V., Liu, S., Glerum, A Rodriguez Piceda, C., (2019). The nature of the North-South
+              change of the magnitude of tectonic shortening in Central Andes at Altiplano-Puna latitudes: a
+              thermomechanical modeling approach.5th International Young Earth Scientists Congress (YES). Berlin. Book of
+              abstracts (p.49).</li>
+            <li>Pons, M., Sobolev, S.V., Liu, S., Glerum, A Rodriguez Piceda, C., (2019). The nature of the North-South
+              change of the magnitude of tectonic shortening in Central Andes at Altiplano-Puna latitudes: a
+              thermomechanical modeling approach. Topoeurope, Granada.</li>
+              </ol>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="aboutme-popup">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h2>About me</h2>
+          <a href="#" class="close-popup">X</a>
+        </div>
+        <div class="popup-body">
+          <p>I am a PhD student at the University of Potsdam and at the Helmholtz Centre Potsdam GFZ in section 2.5 Geodynamic
+            modeling. I develop numerical regional scale models of the Earth to better understand the mechanism behind the
+            evolution of the surface and its deformation at convergent margins. In particular, my studies focus on the role of
+            subduction dynamics and its interaction with the overriding plate. </p>
+
+
+<p>I am also interested in developing new tools to simulate the active tectonics of the Earth. During my studies, I have
+  created a code that calculates the coseismic contribution of earthquakes to the gravity field (the code is available
+  upon request). Additionally, I have been involved in paleomagnetic studies, including measuring the Anisotropy of
+  Magnetic Susceptibility to gain a deeper understanding of the mode of emplacement of plutons, as well as calculating
+  paleomagnetic pole positions and discussing their implications for the closure age of the Mongol-Okhotsk ocean.</p>
+          
+<p>I have also participated to many fied school and works some <a href="https://sites.google.com/site/michaelponsprofil/field-trips" style="color: rgb(248, 236, 16); text-decoration: underline;">pictures are accessible here</a> </p>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="popup" id="research-popup">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h2>Research interests</h2>
+          <a href="#" class="close-popup">X</a>
+        </div>
+        <div class="popup-body">
+<center><h3 name="Phd_abstract">PhD Thesis Project 2018-2022</h3></center>
+<p class="centered-text"> The nature of the North-South change of the magnitude of tectonic shortening in Central Andes at Altiplano-Puna
+      latitudes: a thermomechanical modeling approach</p>
+    <p class="centered-text"><u><strong>Advisor:</strong></u> Prof. Stephan Sobolev</p>
+    <p class="centered-text"><u><strong>Keywords:</strong></u> Andes, geodynamics, subduction, shortening, orogen, plateau</p>
+    <p class="research_description">The subduction of the oceanic Nazca Plate under the continental South American Plate has been active since at least 180
+Ma. However, the cause of the initiation of the shortening of the Andes during less than last 50 My or less, and the
+reasons behind the spatial and temporal variation in the magnitude of the shortening are still debated (Oncken et al.,
+2012).
+
+In the case of the Central Andes, the South American plate is advancing westwards forcing the trench to retreat and the
+Nazca plate to roll-back. However, paleo-reconstructions of the margin position demonstrate that the trench velocity
+slowed down over the last ~50 My and became lower than the South American plate velocity. This difference of velocity is
+expressed by the shortening of the Andes. One reason for this decrease of velocity at the trench can be the anchoring of
+the slab in the lower mantle (Faccenna et al., 2017). Although this hypothesis provides an explanation for the
+initiation of shortening, it cannot explain the observed pulses of shortening (Oncken et al., 2012) as well as
+latitudinal variations of its magnitude (~300 km at ~18-21&deg;S to ~100 km at 15&deg;S latitude) .
+
+In central Andes, weakening mechanisms of the overriding plate (OP) such as lithospheric delamination have intensified
+the tectonic shortening and contributed to formation of the Altiplano-Puna plateau (Sobolev et al., 2006). Moreover, the
+difference in deformation style of the foreland basin, thick-skinned (e.g the Puna) and thin-skinned (e.g the
+Altiplano), respectively, is correlated with variations in the magnitude of shortening. Nevertheless, the influence of
+the strength variations in the OP on the subduction dynamics in the case of the central Andes has been poorly explored
+so far. Our hypothesis is that OP strength variations result in variable rates of trench roll-back. To test this
+hypothesis and in try to reproduce observed spatial and temporal variations of tectonic shortening in central Andes, we
+have built an E-W-oriented 2D geodynamic model along the Altiplano-Puna plateau which incorporated the flat subduction
+episode at ~35 Ma and following evolution of the lithospheric deformation. For that purpose, we used the FEM geodynamic
+code ASPECT. The model is semi-dynamic, which means that the oceanic plate evolves dynamically (i.e. buoyancy-driven),
+while the OP velocity is prescribed. Example of the model replicating deformation patterns and lithospheric structure at
+latitude 21 &deg;S at present time is shown in Figure 1. We will discuss our new findings that demonstrate that not all key
+factors driving orogeny in central Andes have been considered in modelling studies so far.</p>
+      <img src="/assets/andes_subduction-f29f1a9f.png" alt="Image 2" width="800" height="400" style="display: block; margin: 0 auto;">
+      <center><i></i>2D subduction model of Central Andes at 21&deg;S</center></i>
+      <p class="centered-text"><strong>References<br></strong>
+      <cite>Faccenna, C., Oncken, O., Holt, A. F., & Becker, T. W. (2017). Initiation of the Andean orogeny by lower mantle
+      subduction. Earth and Planetary Science Letters, 463, 189-201.<br>
+      
+      Oncken, O., Boutelier, D., Dresen, G., & Schemmann, K. (2012). Strain accumulation controls failure of a plate boundary
+      zone: Linking deformation of the Central Andes and lithosphere mechanics. Geochemistry, Geophysics, Geosystems, 13(12).<br>
+      
+      Sobolev, S. V., Babeyko, A. Y., Koulakov, I., & Oncken, O. (2006). Mechanism of the Andean orogeny: insight from
+      numerical modeling. In The Andes (pp. 513-535). Springer, Berlin, Heidelberg.</cite>
+
+
+<center><h3 name="M2b_abstract">M2 Research project 2017</h3></center>
+<p class="centered-text"> Earthquakes impact on GRACE gravimetric signal at global scale</p>
+<p class="centered-text"><u><strong>Advisors:</strong></u> Dr. Maxime MOUYEN, Prof. Philippe STEER et Prof. Laurent LONGUEVERGNE</p>
+<p class="centered-text"><u><strong>Keywords:</strong></u> GRACE, Scaling laws, Earthquake, Gravity change</p>
+<p class="research_description">GRACE Satellite (Gravity Recovery And Climate Experiment) allows to measure monthly tiny variation of the terrestrial
+gravity field since april 2002. These variations are due to mass redistribution and can come from hydrology (Glacial
+melting, fluids circulation in groundwater), sedimentary (transport of sediments) and also seismic. The goal of this
+study is to model the co-seismic gravimetric signal associated to the global seismicity recorded in the GCMT (Global
+Centroid Moment Tensor) catalog on the observable time period of GRACE to finally correct it. This will give us access
+to gravity signal of reduced amplitude. The co-seismic signal is modelled using seismic rupture parameters defined
+either by model or by scaling law. A global cumulated co-seismic map of gravity variations between 2002 and 2014 is
+calculated. Models are then compared to GRACE data from the Center for Space Research (CSR, Austin Texas). For high
+magnitude (Mw&ge;8), similitude are shown between the model and gravity variations observed from GRACE. However for smaller
+magnitude (Mw&lt;8) gravimetric effect is hardly verifiable.</p>
+<img src="/assets/grace1-67ab9550.png" alt="Image 2" width="800" height="400" style="display: block; margin: 0 auto;">
+<center><i>Major mechanisms responsible of co-sismic gravity change (not to scale). (modified from Tanaka, 2017)</i></center>
+
+<img src="/assets/grace2-3952d60b.jpg" alt="Image 2" width="800" height="400" style="display: block; margin: 0 auto;">
+<center><i>Cumulated gravimetric trend map corrected from the effect of water storage(GLDAS-NOAH), HS d’expansion 60, filter ddk3,
+between 2002 and 2014, colors are saturated from -30 to 30 &micro;Gals. The red circle point out the gravimetric signal in the
+region of Sumatra likely due to earthquake impact. Whereas the green circle show the same in the Nippon region.</i></center>
+
+<center>
+  <h3 name="M2a_abstract">M2 Research Project 2016</h3>
+</center>
+<p class="centered-text">Topographic evolution of Deccan traps by Digital Elevation Map modelling approaches.</p>
+<p class="centered-text"><u><strong>Advisors:</strong></u> Prof. Claudio FACCENNA and Dr. Andrea SEMBRONI</p>
+<p class="centered-text"><u><strong>Keywords:</strong></u> Western gates, flexure, dynamic, residual, isostasy, topography.
+</p>
+<p class="research_description">Indian topography is a key for our understanding of geodynamic processes. The kinematic of Indian plate as the formation
+of the Himalaya mountain chain building are factors that allow to constrain models. Drifting of India is marked by many
+events as microcontinents break up (e.g. Mascarene and Seychelles blocs) associated to wide basalt flow emplacement.
+Thus basalt flow are really good markers to discuss about topographic evolution. The Main Deccan Traps province is one
+of the best preserved LIP in the world. The basalt layers reach a maximum thickness off ~1800 on the western coast and
+are gently inclined eastward (&lt;4&deg; inland) over a longwavelength (λ&gt; 500 km). The question of the process that could
+cause this tilting is a lot debated and topographic evolution using paleoplanation surfaces approaches have already
+been carry out by many authors (Gunnell 1998; Widdowson, 1997; Seth 2007). In our study, we used modeling using GIS to
+propose an answer. We assume that most of the vertical motion was already achieved prior the monsoon impact (&gt;15Ma).
+We have isolated the different major components of the topography ZElevation = ZDyn + ZIso + ZFlex+ ZErod (Becker et
+al., 2014a). Results shows that inland erosion and unloading cannot explains the homogeneous uplift of the coast and
+tilting. The long wavelenght tilting of the topography is not the consequence of the coastal erosion of the western
+passive margin, unloading and its flexuration (Te = 10-13 km explains ~140 km inland). An effective elastic thickness
+of Te = ~50 km-70 km fit with the central Deccan trapps topography. Two majors candidates are proposed : the first,
+dynamic topography obtained by converting free-air gravity anomalies (Craig et al, 2011) shows slightly low
+contribution over the trapps. This is verify by substrating all component estimated exept the dynamic topography to
+the present topography (Becker et al., 2014). The second, isostatic topography is obtained considering buoyant
+homogeneous crust over an homogeneous mantle lithosphere and mantle asthenosphere. The substraction of the isostatic
+topography to the present topography produce a low residual topography implying that the major part of the topography
+is attributed to isostasy. Therefore the the longwavelength tilting is caused by a thinning of the mantle lithosphere
+under the Western Ghats Escarpement.</p>
+<img src="/assets/deccan-a60446ab.jpg" alt="Image 2" width="400" height="550" style="display: block; margin: 0 auto;">
+<center><i></i>Deflection profils with variable elastic thicknesses fonction of the minimum, maximum and average topography in central
+region of Deccan traps</center></i>
+
+<center>
+  <h3 name="M1_abstract">M1 Research Project 2015</h3>
+</center>
+<p class="centered-text">Paleomagnetic study of the upper jurassic granitic massif of Qiltianling (South China) and its tectonic implication on
+the age of closure of the Mongol-Okhotsk Ocean.</p>
+<p class="centered-text"><u><strong>Advisors:</strong></u> Prof. Yan CHEN and Hongsheng LIU</p>
+<p class="centered-text"><u><strong>Keywords:</strong></u> Qitianling, Mongol-Okhotsk, paléomagnétisme, tectonique, fabrique, magnétique, rémanence.
+</p>
+<p class="research_description">The age of closure of the Mongol-Okhotsk Ocean has already been discussed for a long time. To better constrain its age
+of closure, a study of the magnetic fabric and a paleomagnetic study have been carried on the Qitianling pluton during
+this research project. Observations on the field show that the pluton didn’t undergone any visible deformation. Study on
+the Anisotropy of Magnetic Susceptibility confirms it. Analysis shows that an oblate shape and a horizontal foliation
+are dominant, which could indicate that the pluton has not been tilted. Magnetites of pseudo-singledomain have been
+recognized as the mineral carrier of the magnetic remanence. Progressive demagnetization carried on 131 samples, allow
+us to isolate 2 directional magnetic components: one is the Low Temperature Component (CBT), close to the current value
+of the geomagnetic field and one other is the High Temperature Component (CHT). Isolate directions of the high
+temperature component show that the 3 granitic phases cannot be distinguished and have a weak rate of reverse (~16%).
+U-Pb datations on zircons give an average age of 155 Ma (Zhu et al., 2009). These datations have measured the age at the
+temperature of closure of their isotopic system at 850&deg;C. Magnetite gets its magnetic remanence at 580°C. A cooling of
+50&deg;C/Ma compatible with the rate of reversal geomagnetic field shows that the age of acquisition of the magnetic
+remanence by the pluton could be estimated around 150 Ma. The compatibility of the paleomagnetic direction allow us to
+calculate an average direction (CHT), and transform it in a paleomagnetic pole of the South China Block (SCB) of 150 M
+a: 84,1&deg;N, 192,9&deg;E and &alpha;95=7,3. By comparing this paleomagnetic pole with those from the North China Block (NCB) and
+from Siberia, results indicate that NCB and SCB was already stuck together and considered as a single block. This single
+block had a relative displacement of 1300±800 km in paleolatitude with the Siberia block for 150 Ma. This value
+indicates that the Mongol-Okhotsk Ocean was still opened to the Upper Jurassic with a minimum width of ~500 km. This
+result contrasts with the previous studies which have estimated a width of ~1500km (Enkin et al., 1992) or ~3000km (Pei
+et al., 2011).</p>
+<img src="/assets/paleomag-9b2390c7.jpg" alt="Image 2" width="400" height="230" style="display: block; margin: 0 auto;">
+<center><i></i>Stereographic projection of paleomagnetic poles of : the South China Block (SCB, of this study), the North China Block
+(NCB, Gilder et Courtillot, 1997), the Eurasian Block (EUR,Besse et Courtillot, 2002). Differences in colatitude between
+the two great circles that crossed on the sampling site show the likely rotation between SCB and EUR. Differences in
+colatitude between the two smaller circles that are centred on the same sampling site shows the likely crustal
+shortening between these two blocks since 150</center></i>
+<p class="research_description">The require ASM study I practicated is part of a publication <br> 
+LIU, Hongsheng, MARTELET, Guillaume, WANG, Bo, et al. <a href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018JB015761"
+  style="color: rgb(122, 113, 254);">Incremental emplacement of the late Jurassic
+  mid‐crustal, lopolith‐like Qitianling pluton, South China, revealed by AMS and Bouguer gravity data. Journal of
+  Geophysical Research: Solid Earth, 2018.</a></p>
+
+
+  <center>
+    <h3 name="L3_abstract">L3 Research Project 2014</h3>
+  </center>
+  <p class="centered-text">Finite strain analysis using Meere and Mulchrone method</p>
+  <p class="centered-text"><u><strong>Advisors:</strong></u>Prof. Patrick A.Meere.</p>
+  <p class="centered-text"><u><strong>Example:</strong></u> Trabeg Formation Conglomerate (Tb1)
+  </p>
+  <img src="/assets/finite1-c5623bf1.jpg" alt="Image 2" width="800" height="200" style="display: block; margin: 0 auto;">
+  <p class="research_description">Rf is the ratio between each axis (major axis/minor axis) of the average ellipse of each
+    grain and phi is the angle
+    regarding to the vertical axis. Left rotation is negative and right rotation is positive.</p>
+  <img src="/assets/finite2-76e91c9d.jpg" alt="Image 2" width="500" height="300" style="display: block; margin: 0 auto;">
+  <p class="research_description">Rs (=average of Rf) results from different samples of the same formation show small strain rate variations using the
+  Muchrone 2001 method.</p>
+  <img src="/assets/finite3-990ae7f6.jpg" alt="Image 2" width="500" height="300" style="display: block; margin: 0 auto;">
+  <p class="research_description">Average Rs result from different method show wide variations from one method to another.</p>
+
+</div>
+      </div>
+    </div>
+<!--     <div class="popup" id="gallery-popup">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h2>Models gallery</h2>
+          <a href="#" class="close-popup">X</a>
+        </div>
+        <div class="popup-body">
+          <p></p>A cold mantle is sinking in an adiabatic mantle. the jump of viscosity at 660 km depth causes the slab to buckle on
+          itself. Video shows the compositional phases and strain rate.</p>
+        <iframe width="280" height="157" src="https://www.youtube.com/embed/7YxtL2Dl9H0" frameborder="0"
+         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div> -->
+
+
+    <div class="popup" id="social-popup">
+      <div class="popup-content">
+        <div class="popup-header">
+          <h2>Social Networks</h2><br><br>
+          <p><u>Here are others websites that I have done :</u><br>
+                      <a href="https://sciansblog.wordpress.com/" style="color: rgb(122, 113, 254);">SciANS</a> is a Wordpress blog where I can discuss of publications, hobbies, it also allows me to make a bridge for all the
+          other links below.<br>
+          <a href="https://sites.google.com/site/knowlapps/" style="color: rgb(122, 113, 254);">Knowlapps-Geolapps</a>, its first purpose was to share my passion about science and discoveries. You will also find some
+          pictures and videos about divers trips that I have done during my free time as well as few lectures and report made
+          while I was undergraduate.<br>
+          <br>
+          You can also follow me on social networks<br>
+          <a href="https://www.youtube.com/channel/UCwsY0IN54VRMe2YPX16XVZA?view_as=subscriber" style="color: rgb(122, 113, 254);">-Youtube</a>
+          <a href="https://www.instagram.com/minerallov/"
+            style="color: rgb(122, 113, 254);">-instagram Minerallov</a><br>
+          <a href="https://plus.google.com/u/0/+PonsMicha%C3%ABl"
+            style="color: rgb(122, 113, 254);">-Google plus - Google Map contributor Lv8 with more than 1 300 000 views.</a><br>
+          <a href="https://www.linkedin.com/in/michael-pons/"
+            style="color: rgb(122, 113, 254);">-LinkedIn</a><br>
+          <a href="https://twitter.com/MineralloT"
+            style="color: rgb(122, 113, 254);">-Twitter</a><br>
+          <a href="https://www.facebook.com/michaelpons.geo"
+            style="color: rgb(122, 113, 254);">-Facebook</a>
+          </p>
+          <a href="#" class="close-popup">X</a>
+        </div>
+        <div class="popup-body">
+                    <center></center><a class="twitter-timeline" href="https://twitter.com/MichaPons">Tweets by Michael</a></center>
+                    <center><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+        </div>
+      </div>x
+    </div>
+  </nav>
+  <h1 class="title">Michael Pons</h1>
+  <!-- <div class="top-left-text">Michael Pons</div> -->
+  <div id="solar-system"></div>
+  <div id="earth-system"></div>
+  <div id="planet-info">
+    <button id="close-button">Close</button>
+    <p id="planet-desc"></p>
+  </div>
+  
+  <!-- <script type="module" src="Example_pointcloud.js"></script> --> 
+</body>
+
+</html>
