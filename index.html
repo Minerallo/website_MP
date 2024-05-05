@@ -9,7 +9,7 @@
   <title>Solar System</title>
   <!-- <link href="./style.css" rel="stylesheet"> -->
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-  <script type="module" crossorigin src="/website_MP/assets/main-5d2de2da.js"></script>
+  <script type="module" crossorigin src="/website_MP/assets/main-ae445272.js"></script>
   <link rel="stylesheet" href="/website_MP/assets/index-e5912c8e.css">
 </head>
 
@@ -46,12 +46,12 @@
     <div class="content">
       <h1 class="sidebartitle">Dr. Michael Pons</h1>
         <ul>
-            <a href="#" class="about-me-link" onclick="openSidebar('About Me')">About Me</a>
-            <a href="#" class="cv-link" onclick="openSidebar('View my CV')">View my CV</a>
-            <a href="#" class="research-link" onclick="openSidebar('Research')">Research</a>
-            <a href="#" class="publications-link" onclick="openSidebar('Publications')">Publications</a>
-            <a href="#" class="model-gallery-link" onclick="openSidebar('Model Gallery')">Model Gallery</a>
-            <a href="#" class="social-networks-link" onclick="openSidebar('Social Networks')">Social Networks</a>    
+            <a href="#1" class="about-me-link" onclick="openSidebar('About me')">About me</a>
+            <a href="#2" class="cv-link" onclick="openSidebar('View my CV')">View my CV</a>
+            <a href="#3" class="research-link" onclick="openSidebar('Research')">Research</a>
+            <a href="#4" class="publications-link" onclick="openSidebar('Publications')">Publications</a>
+            <a href="#5" class="model-gallery-link" onclick="openSidebar('Model Gallery')">Model Gallery</a>
+            <a href="#6" class="social-networks-link" onclick="openSidebar('Social Networks')">Social Networks</a>    
       </div>
     </div>
     <div class="menu-toggle" onclick="toggleSidebar()">
@@ -70,7 +70,11 @@
   </div>
 
 
-
+<script>
+  function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle('active');
+  }
+  </script>
 </body>
 
 </html>
