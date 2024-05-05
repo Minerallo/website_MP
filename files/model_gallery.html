@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            font-family: 'Poppins', sans-serif;
+            color: #000;
+        }
+
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .video {
+            width: 100%;
+            margin: 1%;
+            text-align: center;
+        }
+
+        iframe {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .video-title {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .video-description {
+            margin-top: 1rem;
+            font-size: 1rem;
+            text-align: justify;
+            color: #000;
+        }
+
+        .info {
+            margin-top: 1rem;
+            font-size: 1rem;
+            text-align: center;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p class="info">Models below are built using ASPECT code and visualized with ParaView</p>
+
+    <div class="video-container">
+        <div class="video">
+            <h2 class="video-title">Slab Buckling</h2>
+            <iframe src="https://www.youtube.com/embed/7YxtL2Dl9H0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="video-description">A cold mantle is sinking in an adiabatic mantle. The jump of viscosity at 660 km depth causes the slab to buckle on itself. The video shows the compositional phases and strain rate.</p>
+        </div>
+        <div class="video">
+            <h2 class="video-title">Flat Subduction</h2>
+            <iframe src="https://www.youtube.com/embed/bgVbXprFRz0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="video-description">The oceanic plate subducts with a low angle causing flat subduction. When the slab steepens back, the stress is accommodated by the deformation of the overriding plate. Flat subduction is a highly debated process that could have contributed to the formation of the Andes and Laramide.</p>
+        </div>
+        <div class="video">
+            <h2 class="video-title">Subduction & Surface Processes</h2>
+            <iframe src="https://www.youtube.com/embed/75qr-J6KyNs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="video-description">Surface processes are important at convergent boundaries. Sediments are eroded and transported to the trench, which lubricates the subduction interface. Additionally, erosion changes the topographic stress and has consequences on the asymmetric development of the deformation and the topography, forming low angle thrust faults in the Foreland. The video shows 40 Ma of topographic evolution up to the development of a plateau-style orogenesis similar to the Central Andes using the ASPECT - FastScape coupling.</p>
+        </div>
+        <div class="video">
+            <h2 class="video-title">Subduction Dynamics and Continent Deformation</h2>
+            <iframe src="https://www.youtube.com/embed/DCoZ0RLmczw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="video-description">Subduction dynamics is key to understanding the overall picture behind the formation of subduction type orogenesis (e.g., the Andean orogeny). This video shows how deep processes (flat subduction, buckling) of the oceanic plate relate to important deformation phases of the overriding plate.</p>
+        </div>
+        <div class="video">
+            <h2 class="video-title">Subduction Dynamics and Continent Deformation</h2>
+            <img src="/website_MP/img/datadriven_model.png" alt="Image 1">
+            <p class="video-description">I utilize published present-day lithospheric structural model in order to investigate the effect of slab geometry and overriding plate inherited structures on the localization of the strain.</p>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
