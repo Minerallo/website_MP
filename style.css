@@ -253,11 +253,11 @@ nuv a {
 }
 
 .content {
-  flex: 1;
-  padding: 20px;
-  text-align: center; /* Uncommented */
+  /* flex: 0; */
+  padding: 40px;
+  /* text-align: center; */
   width: 100%;
-  transform: translate(30%, -5%);
+  transform: translate(-5%, -5%);
 }
 
 
@@ -437,25 +437,6 @@ nuv a {
         padding: 10px;
       } */
 
-  /* Styles for the about me modal */
-  /*  #about-me-popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 999;
-      width: 80%;
-      height: 80%;
-      background: white;
-      padding: 20px;
-      box-shadow: 0 0 10px #ccc;
-  }*/
-
-  /* Show the modal when the about me link is clicked */
-  /*   #about-me-popup.show {
-      display: block;
-  } */
 
   /* .top-left-text {
   position: absolute;
