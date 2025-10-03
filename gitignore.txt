@@ -36,3 +36,6 @@ dist-ssr/
 ParaViewGlance.html
 main_test_marching.js
 test.html
+
+# gh-pages cache
+node_modules/.cache/gh-pages/
