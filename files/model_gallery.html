@@ -64,7 +64,8 @@
 <body>
 
     <p class="info">Models below are built using ASPECT code and visualized with ParaView</p>
-    <iframe src="files/x3dom.xhtml" width="1200" height="1000" title="XHTML Content" style="border: none; overflow: hidden;"></iframe>
+=
+    <!-- <iframe src="files/x3dom.xhtml" width="1200" height="1000" title="XHTML Content" style="border: none; overflow: hidden;"></iframe> -->
 
     <!-- <iframe src="xhtml_files/x3dom.xhtml" width="1200" height="1000" title="XHTML Content" style="border: none; overflow: hidden;"></iframe> -->
     <!-- if online we call the raw file hosted using lfs on github (not working) -->
@@ -83,8 +84,6 @@
         .catch(error => console.error('Error fetching x3dom.xhtml:', error));
     </script> -->
 
-    <p class="image_label">3D model computed with ASPECT. The model shows topography generated from self-consistent geodynamical processes. Cold subductions
-        (blue) are sinking into the mantle whereas warm mantle plumes (red) are rising towards the surface.</p>
     <div class="video-container">
         <div class="video">
             <h2 class="video-title">Slab Buckling</h2>
@@ -111,9 +110,19 @@
             <img src="/website_MP/img/datadriven_model.png" width=80% height=80% alt="Image 1">
             <p class="video-description">I utilize published present-day lithospheric structural model in order to investigate the effect of slab geometry and overriding plate inherited structures on the localization of the strain.</p>
         </div>
+        <div class="video">
+            <h2 class="video-title">Global mantle convection on Earth</h2>
+            <iframe src="https://www.youtube.com/embed/7N1X7We5IYQ"  width="500" height="500" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p class="video-description">I have calibrated global numerical models of plate tectonics and mantle dynamics. This visualisation is being shown at the planetarium of Berlin at higher resolution.Cold subductions (blue) are sinking into the mantle whereas warm mantle plumes (red) are rising towards the surface.</p>
+        </div>
     </div>
 
-
+    <p class="image_label">Click below to visualise a 3D global model computed with ASPECT. The model shows topography generated from self-consistent geodynamical processes. Cold subductions
+        (blue) are sinking into the mantle whereas warm mantle plumes (red) are rising towards the surface.</p>
+    <iframe src="Models/SceneExplorer.html?fileURL=Earth_3d_R01f.vtkjs"
+    width="1200" height="1000"
+    style="border:none; background:#020058;">
+</iframe>
 </body>
 
 </html>
