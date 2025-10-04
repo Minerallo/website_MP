@@ -1,114 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <meta charset="UTF-8"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #000; /* Set text color to black */
-            z-index: 10000;
+    <!-- Poppins font import -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Michael Pons</title>
+  <style>
+    body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7;
+    color: #111;
+    }
 
+    /* === Banner === */
+    .banner {
+    position: relative;
+    text-align: center;
+    color: white;
+    background: url('img/background_fire_ice.png') no-repeat center center/cover;
+    padding: 100px 20px 80px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Name */
+    .banner h1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Subtitle */
+    .banner h3 {
+    font-weight: 500;
+    font-size: clamp(18px, 2vw, 24px);
+    margin-top: 10px;
+    color: #fdd835;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Fade-in animation */
+    .banner h1, .banner h3 {
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+    }
+    .banner h3 { animation-delay: 0.4s; }
+
+    @keyframes fadeIn {
+    to { opacity: 1; }
+    }
+
+    /* === Profile Section === */
+    .profile-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      margin: 40px auto;
+      padding: 40px;
+      max-width: 1100px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-container img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      margin-right: 40px;
+    }
+
+    .profile-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .profile-text h2 {
+      color: #002b5b;
+      margin-bottom: 10px;
+    }
+
+    .profile-text p {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: #222;
+    margin: 0 0 1.2rem 0;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    }
+
+    .profile-text h2 {
+    color: #002b5b;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    }
+
+    .profile-text a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: 500;
+    }
+    .profile-text a:hover {
+    text-decoration: underline;
+    }
+
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+
+    /* === 3D Model Section === */
+    .viewer-section {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+
+    .image_label {
+        text-align: center;
+        line-height: 1.8;
+        font-size: 1.05rem;
+        color: #222;
+        margin: 0 0 1.2rem 0;
+        font-weight: 400;
+        font-family: 'Poppins', sans-serif;
         }
 
-        h3 {
-            margin-top: 0;
-            z-index: 10000;
+    iframe {
+      border: none;
+      border-radius: 10px;
+      width: 90%;
+      height: 700px;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
 
-        }
-
-        p {
-            margin: 10px 0;
-            color: #333;
-            z-index: 10000;
-
-        }
-
-        .centered-text {
-            text-align: center;
-            z-index: 10000;
-        }
-
-        .about_me-content {
-            text-align: justify;
-            color: #333;
-            z-index: 10000;
-
-        }
-
-        .image_label {
-            text-align: center; /* Center the text horizontally */
-            font-size: 14px; /* Adjust the font size as needed */
-            color: #666; /* Set the color of the label text */
-            margin-top: 5px; /* Add some space between the image and the label */
-        }
-
-/* 
-        img {
-            display: block;
-            margin: 0 auto;
-            z-index: 10000;
-
-        } */
-    </style>
+    /* === Responsive === */
+    @media (max-width: 800px) {
+      .profile-container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .profile-container img {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
 </head>
-<body>
-    <div class="about_me-content">
-        <h3>About me</h3>
-    <p>I am currently a postdoctoral researcher at GFZ Potsdam (section 2.5, Geodynamic modeling), where I am investigating the effect of surface processes on plate tectonic activity over the last 1ba, 
-        I am developing an advanced coupled model between geodynamics, surface processes and climate code. </p>
 
-    <p>I did my PhD between the University of Potsdam and the Helmholtz Centre Potsdam GFZ, Department 2.5 Geodynamic Modelling. There I developed regional scale numerical models of Chilean subduction to better understand the mechanism behind the evolution of the Andean surface and, more generally, deformation at convergent margins. 
-        In particular, my PhD thesis focused on the role of subduction dynamics and its interaction with the overriding plate.
-        I am also interested in developing new tools to simulate the Earth's active tectonics. 
-        During my studies, I have created a code that calculates the coseismic contribution of earthquakes to the gravity field (the code is available upon request). 
-        Additionally, I have been involved in paleomagnetic studies, including measuring the Anisotropy of Magnetic Susceptibility to gain a deeper understanding of the mode of emplacement of plutons, as well as calculating paleomagnetic pole positions and discussing their implications for the closure age of the Mongol-Okhotsk ocean.</p>
-            
-    <p>I have also participated in many field schools.
-        <!-- and works as decribed in my <a href="#2" class="cv-link" onclick="openSidebar('View my CV')">my CV</a>>.  -->
-        <!-- Some <a href="https://sites.google.com/site/michaelponsprofil/field-trips" style="color: rgb(248, 236, 16); text-decoration: underline;">pictures are accessible here</a>.</p> -->
-    
+<body>
+
+  <!-- === Banner === -->
+  <div class="banner">
+    <h1>Dr. Michael Pons</h1>
+    <h3>Postdoctoral Researcher in Geodynamic Modelling | GFZ Potsdam</h3>
+  </div>
+
+  <!-- === About Me Section === -->
+  <section class="profile-container">
+    <img src="../img/me.png" alt="Michael Pons">
+    <div class="profile-text">
+      <h2>About Me</h2>
+      <p>
+        I am currently a postdoctoral researcher at 
+        <strong>GFZ Potsdam (Section 2.5, Geodynamic Modelling)</strong>, 
+        where my research focuses on understanding the development of different tectonic regimes, 
+        from Earth’s plate tectonics to Venus’ ridge-only and squishy-lid styles. 
+        I am developing an advanced geodynamic model to investigate these processes, 
+        with the long-term goal of coupling mantle dynamics and surface processes at the global scale.
+      </p>
+  
+      <p>
+        I completed my <strong>PhD jointly at the University of Potsdam and the Helmholtz Centre Potsdam GFZ 
+        (Department 2.5, Geodynamic Modelling)</strong>, 
+        where I developed regional-scale numerical models of Chilean subduction to better understand 
+        the mechanisms driving Andean surface evolution and deformation at convergent margins. 
+        My PhD research primarily focused on the role of subduction dynamics and its interaction 
+        with the overriding plate.
+      </p>
+  
+      <p>
+        Beyond research, I serve as <strong>Co-Editor-in-Chief of the EGU Geodynamics Blog</strong> and 
+        <strong>co-lead Working Group 4</strong> of the
+        <a href="https://biogeodynamics.com/" target="_blank" rel="noopener noreferrer">EUROBIG (Biogeodynamics) COST Action</a>—
+        an initiative dedicated to bridging geodynamics, biology, and climate sciences.
+      </p>
+  
+      <p>
+        I have also contributed to the <strong>development of new computational tools</strong> 
+        to estimate the coseismic contribution of earthquakes to the gravity field, 
+        and I have participated in numerous field schools and collaborative international research efforts.
+      </p>
     </div>
-    <p class="image_label">Click below to visualise a 3D global model computed with ASPECT. The model shows topography generated from self-consistent geodynamical processes. Cold subductions
-        (blue) are sinking into the mantle whereas warm mantle plumes (red) are rising towards the surface.</p>
-        <iframe src="Models/SceneExplorer.html?fileURL=Earth_3d_R01f.vtkjs"
-        width="1200" height="1000"
-        style="border:none; background:#fff;">
-        <!-- <iframe src="files/x3dom.xhtml" width="1200" height="1000" title="XHTML Content" style="border: none; overflow: hidden;"></iframe> -->
+  </section>
 
-    <!-- <iframe src="xhtml_files/x3dom.xhtml" width="1200" height="1000" title="XHTML Content" style="border: none; overflow: hidden;"></iframe> -->
-       <!-- if online we call the raw file hosted using lfs on github (not working) -->
-        <!-- <iframe src="https://raw.githubusercontent.com/Minerallo/website_MP/full_website/files/x3dom.xhtml" width="1200" height="1000" title="XHTML Content" style="border: none; overflow: hidden;"></iframe> -->
+  <!-- === Model Viewer === -->
+  <section class="viewer-section">
+    <p class="image_label">Click below to visualise a 3D global model computed with ASPECT.
+      The model shows topography generated from self-consistent geodynamical processes.
+      Cold subductions (blue) are sinking into the mantle whereas warm mantle plumes (red)
+      are rising towards the surface.</p>
 
-        <!-- <iframe id="x3domFrame" width="1200" height="1000" title="XHTML Content" style="border: none; overflow: hidden;"></iframe>
+    <iframe
+      src="Models/SceneExplorer.html?fileURL=Earth_3d_R01f.vtkjs"
+      allowfullscreen>
+    </iframe>
+  </section>
 
-        <script>
-        fetch('https://raw.githubusercontent.com/Minerallo/website_MP/full_website/files/x3dom.xhtml')
-            .then(response => response.text())
-            .then(data => {
-                const iframe = document.getElementById('x3domFrame');
-                iframe.srcdoc = data;
-            })
-            .catch(error => console.error('Error fetching x3dom.xhtml:', error));
-        </script> -->
-    
-    <!-- <img src="img/sphere_scaled.jpg" alt="Image 2" width="800" height="400" style="display: block; margin: 0 auto;"> -->
-
-    <!-- <title>X3DOM Example</title>
-    <script src="https://www.x3dom.org/download/x3dom.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/x3dom.css">
-</head>
-<body>
-    <h1>X3DOM Example</h1>
-    <x3d id="scene" width="800px" height="600px">
-        <scene>
-            <inline url="earth_model.x3d"></inline>
-        </scene>
-    </x3d>
-</body> -->
 </body>
 </html>
