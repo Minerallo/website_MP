@@ -19,6 +19,7 @@ export default defineConfig({
 
 
         // nested: resolve(__dirname, 'gallery/index.html'),
+        // gallery: resolve(__dirname, 'gallery/index.html')
       },
     },
     // Specify the assets to include and their destination.
