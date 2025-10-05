@@ -1,132 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model Gallery</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: auto;
-            font-family: 'Poppins', sans-serif;
-            color: #000;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Model Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f7f7f7;
+      color: #111;
+      overflow-x: hidden;
+    }
+
+    /* === Banner === */
+    .banner {
+      position: relative;
+      text-align: center;
+      color: white;
+      background: url('img/background_fire_ice.png') no-repeat center center/cover;
+      padding: 100px 20px 80px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .banner h3 {
+      font-weight: 500;
+      font-size: clamp(18px, 2vw, 22px);
+      margin-top: 10px;
+      color: #fdd835;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    /* === Gallery Grid === */
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 30px;
+      justify-content: center;
+      padding: 60px 40px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* === Card === */
+    .video {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    iframe, img {
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      border: none;
+      object-fit: cover;
+    }
+
+    .video-title {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #002b5b;
+    }
+
+    .video-description {
+      margin-top: 1rem;
+      font-size: 1rem;
+      text-align: justify;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .info {
+      text-align: center;
+      margin: 30px auto 10px;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .image_label {
+        text-align: center;
+        line-height: 1.8;
+        font-size: 1.05rem;
+        color: #222;
+        margin: 0 0 1.2rem 0;
+        font-weight: 400;
+        font-family: 'Poppins', sans-serif;
         }
 
-        .video-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
-            justify-content: center;
-            padding: 20px;
-        }
+    /* === 3D Model Section === */
+    .viewer-section {
+    text-align: center;
+    margin: 80px auto;
+    padding: 0 60px;        /* ✅ Adds left/right space (border effect) */
+    max-width: 1800px;      /* Keeps layout centered on wide screens */
+    }
 
-        .video {
-            width: 100%;
-            margin: 1%;
-            text-align: center;
-        }
-
-        iframe {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .video-title {
-            margin-top: 1rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #000;
-        }
-
-        .video-description {
-            margin-top: 1rem;
-            font-size: 1rem;
-            text-align: justify;
-            color: #000;
-        }
-
-        .info {
-            margin-top: 1rem;
-            font-size: 1rem;
-            text-align: center;
-            color: #000;
-        }
-        .image_label {
-            text-align: center; /* Center the text horizontally */
-            font-size: 14px; /* Adjust the font size as needed */
-            color: #666; /* Set the color of the label text */
-            margin-top: 5px; /* Add some space between the image and the label */
-        }
-    </style>
+    iframe.model-viewer {
+    display: block;
+    margin: 0 auto;
+    border: none;
+    border-radius: 12px;
+    width: 100%;            /* fills the padded container */
+    height: 800px;          /* taller 3D viewer */
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    /* === Responsive === */
+    @media (max-width: 600px) {
+      .banner {
+        padding: 70px 20px 50px;
+      }
+      iframe, img {
+        height: 250px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Banner -->
+  <div class="banner">
+    <h1>Model Gallery</h1>
+    <h3>Numerical Models of Geodynamics | ASPECT + FastScape</h3>
+  </div>
 
-    <p class="info">Models below are built using ASPECT code and visualized with ParaView</p>
-=
-    <!-- <iframe src="files/x3dom.xhtml" width="1200" height="1000" title="XHTML Content" style="border: none; overflow: hidden;"></iframe> -->
+  <p class="info">Models below are built using the <strong>ASPECT</strong> code and visualized with <strong>ParaView</strong>.</p>
 
-    <!-- <iframe src="xhtml_files/x3dom.xhtml" width="1200" height="1000" title="XHTML Content" style="border: none; overflow: hidden;"></iframe> -->
-    <!-- if online we call the raw file hosted using lfs on github (not working) -->
-    <!-- <iframe src="https://raw.githubusercontent.com/Minerallo/website_MP/full_website/files/x3dom.xhtml" width="1200" height="1000" title="XHTML Content" style="border: none; overflow: hidden;"></iframe> -->
-
-
-    <!-- <iframe id="x3domFrame" width="1200" height="1000" title="XHTML Content" style="border: none; overflow: hidden;"></iframe> -->
-
-    <!-- <script>
-    fetch('https://raw.githubusercontent.com/Minerallo/website_MP/full_website/files/x3dom.xhtml')
-        .then(response => response.text())
-        .then(data => {
-            const iframe = document.getElementById('x3domFrame');
-            iframe.srcdoc = data;
-        })
-        .catch(error => console.error('Error fetching x3dom.xhtml:', error));
-    </script> -->
-
-    <div class="video-container">
-        <div class="video">
-            <h2 class="video-title">Slab Buckling</h2>
-            <iframe src="https://www.youtube.com/embed/7YxtL2Dl9H0" width="500" height="500" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p class="video-description">A cold mantle is sinking in an adiabatic mantle. The jump of viscosity at 660 km depth causes the slab to buckle on itself. The video shows the compositional phases and strain rate.</p>
-        </div>
-        <div class="video">
-            <h2 class="video-title">Flat Subduction</h2>
-            <iframe src="https://www.youtube.com/embed/bgVbXprFRz0" width="500" height="500" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p class="video-description">The oceanic plate subducts with a low angle causing flat subduction. When the slab steepens back, the stress is accommodated by the deformation of the overriding plate. Flat subduction is a highly debated process that could have contributed to the formation of the Andes and Laramide.</p>
-        </div>
-        <div class="video">
-            <h2 class="video-title">Subduction & Surface Processes</h2>
-            <iframe src="https://www.youtube.com/embed/75qr-J6KyNs" width="500" height="500" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p class="video-description">Surface processes are important at convergent boundaries. Sediments are eroded and transported to the trench, which lubricates the subduction interface. Additionally, erosion changes the topographic stress and has consequences on the asymmetric development of the deformation and the topography, forming low angle thrust faults in the Foreland. The video shows 40 Ma of topographic evolution up to the development of a plateau-style orogenesis similar to the Central Andes using the ASPECT - FastScape coupling.</p>
-        </div>
-        <div class="video">
-            <h2 class="video-title">Subduction Dynamics and Continent Deformation</h2>
-            <iframe src="https://www.youtube.com/embed/DCoZ0RLmczw" width="500" height="500" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p class="video-description">Subduction dynamics is key to understanding the overall picture behind the formation of subduction type orogenesis (e.g., the Andean orogeny). This video shows how deep processes (flat subduction, buckling) of the oceanic plate relate to important deformation phases of the overriding plate.</p>
-        </div>
-        <div class="video">
-            <h2 class="video-title">Subduction Dynamics and Continent Deformation</h2>
-            <img src="/website_MP/img/datadriven_model.png" width=80% height=80% alt="Image 1">
-            <p class="video-description">I utilize published present-day lithospheric structural model in order to investigate the effect of slab geometry and overriding plate inherited structures on the localization of the strain.</p>
-        </div>
-        <div class="video">
-            <h2 class="video-title">Global mantle convection on Earth</h2>
-            <iframe src="https://www.youtube.com/embed/7N1X7We5IYQ"  width="500" height="500" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p class="video-description">I have calibrated global numerical models of plate tectonics and mantle dynamics. This visualisation is being shown at the planetarium of Berlin at higher resolution.Cold subductions (blue) are sinking into the mantle whereas warm mantle plumes (red) are rising towards the surface.</p>
-        </div>
+  <!-- Gallery -->
+  <div class="video-container">
+    <div class="video">
+      <h2 class="video-title">Slab Buckling</h2>
+      <iframe src="https://www.youtube.com/embed/7YxtL2Dl9H0" allowfullscreen></iframe>
+      <p class="video-description">
+        A cold mantle is sinking in an adiabatic mantle. The jump of viscosity at 660 km depth causes the slab to buckle on itself.
+        The video shows the compositional phases and strain rate.
+      </p>
     </div>
 
-    <p class="image_label">Click below to visualise a 3D global model computed with ASPECT. The model shows topography generated from self-consistent geodynamical processes. Cold subductions
-        (blue) are sinking into the mantle whereas warm mantle plumes (red) are rising towards the surface.</p>
-    <!-- <iframe src="Models/SceneExplorer.html?fileURL=Earth_3d_R01f.vtkjs"
-    width="1200" height="1000"
-    style="border:none; background:#020058;">
-</iframe> -->
-<iframe src="Models/SceneExplorer.html?fileURL=Earth_3d_R01f.vtkjs"
-        width="1200" height="1000"
-        style="border:none; background:#fff;">
-</iframe>
-</body>
+    <div class="video">
+      <h2 class="video-title">Flat Subduction</h2>
+      <iframe src="https://www.youtube.com/embed/bgVbXprFRz0" allowfullscreen></iframe>
+      <p class="video-description">
+        The oceanic plate subducts with a low angle causing flat subduction. When the slab steepens back, the stress is
+        accommodated by deformation of the overriding plate — a process potentially key in forming the Andes and Laramide.
+      </p>
+    </div>
 
+    <div class="video">
+      <h2 class="video-title">Subduction & Surface Processes</h2>
+      <iframe src="https://www.youtube.com/embed/75qr-J6KyNs" allowfullscreen></iframe>
+      <p class="video-description">
+        Surface processes reshape convergent boundaries. Sediments eroded and transported to the trench lubricate
+        the subduction interface, influencing stress and deformation in the orogen. This model shows the ASPECT–FastScape coupling.
+      </p>
+    </div>
+
+    <div class="video">
+      <h2 class="video-title">Subduction Dynamics and Continent Deformation</h2>
+      <iframe src="https://www.youtube.com/embed/DCoZ0RLmczw" allowfullscreen></iframe>
+      <p class="video-description">
+        Subduction dynamics control orogeny. This model links slab behavior (buckling, flattening) with upper-plate deformation,
+        offering insight into the Andean orogeny and similar tectonic systems.
+      </p>
+    </div>
+
+    <div class="video">
+      <h2 class="video-title">Data-Driven Subduction Model</h2>
+      <img src="img/Andes_GFZ.png" alt="Data-driven model">
+      <!-- <iframe
+      class="model-viewer"
+      src="Models/SceneExplorer.html?fileURL=SA_model_3d.vtkjs"
+      allowfullscreen>
+    </iframe> -->
+      <p class="video-description">
+        Published present-day lithospheric structural model of the Southern Central Andes used to explore how slab geometry and inherited structures
+        in the overriding plate influence deformation localization.
+      </p>
+    </div>
+
+    <div class="video">
+      <h2 class="video-title">Global Mantle Convection on Earth</h2>
+      <iframe src="https://www.youtube.com/embed/7N1X7We5IYQ" allowfullscreen></iframe>
+      <p class="video-description">
+        Calibrated global numerical models of plate tectonics and mantle dynamics.
+        Visualized at the Berlin Planetarium, showing subduction (blue) and rising mantle plumes (red).
+      </p>
+    </div>
+  </div>
+
+
+
+  <section class="viewer-section">
+    <p class="image_label">
+      Click below to visualise a 3D global model computed with ASPECT. 
+      The model shows self-consistent topography from geodynamical processes.
+    </p>
+  
+    <iframe
+      class="model-viewer"
+      src="Models/SceneExplorer.html?fileURL=Earth_3d_R01f.vtkjs"
+      allowfullscreen>
+    </iframe>
+  </section>
+  
+
+</body>
 </html>

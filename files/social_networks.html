@@ -1,63 +1,174 @@
-<!-- social_networks.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Networks</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            padding: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Networks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        .social-networks-content {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-/* 
-        h3 {
-            color: #333;
-        } */
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f7f7f7;
+      color: #111;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-        p {
-            color: #333;
-        }
+    /* === Banner === */
+    .banner {
+      position: relative;
+      text-align: center;
+      background: url('img/background_fire_ice.png') no-repeat center center/cover;
+      padding: 100px 20px 80px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
 
-        a {
-            color: #007bff; /* Blue color */
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+    .banner h1 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff; /* white like other pages */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
 
-        a:hover {
-            color: #0056b3; /* Darker blue color on hover */
-        }
-    </style>
+    .banner h3 {
+    font-weight: 500;
+    font-size: clamp(18px, 2vw, 22px);
+    margin-top: 10px;
+    color: #fdd835; /* warm yellow accent */
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    /* === Main Content === */
+    .social-networks-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px 50px;
+    color: #111;
+    font-family: 'Poppins', sans-serif; /* ✅ Ensures full consistency */
+    }
+
+    h3 {
+      color: #002b5b;
+      font-size: 1.6rem;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    h3::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #fdd835;
+      margin: 10px auto 20px;
+      border-radius: 2px;
+    }
+
+    p {
+    color: #222;
+    font-size: 1rem;
+    text-align: justify;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    }
+
+    /* === Links === */
+    a {
+      color: #002b5b !important;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+
+    a:hover {
+      color: #fdd835 !important;
+      transform: translateY(-2px);
+    }
+
+    /* === Social Buttons === */
+    .social-links a {
+      display: block;
+      background-color: #f5f7ff;
+      color: #002b5b !important;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin: 8px auto;
+      width: fit-content;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      background-color: #002b5b;
+      color: #fff !important;
+      transform: translateY(-2px);
+    }
+
+    /* === Twitter Embed === */
+    .twitter-timeline {
+      margin-top: 30px;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 5px;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 700px) {
+      .social-networks-content {
+        padding: 25px;
+        margin: 30px 10px;
+      }
+      p {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <div class="social-networks-content">
-        <h3>Social Networks</h3>
-        <p><u>Here are others websites that I have done :</u><br>
-          <a href="https://sciansblog.wordpress.com/" style="color: rgb(122, 113, 254);">SciANS</a> is a Wordpress blog where I can discuss of publications, hobbies, it also allows me to make a bridge for all the other links below.<br>
-          <a href="https://sites.google.com/site/knowlapps/" style="color: rgb(122, 113, 254);">Knowlapps-Geolapps</a>, its first purpose was to share my passion about science and discoveries. You will also find some pictures and videos about divers trips that I have done during my free time as well as few lectures and report made while I was undergraduate.<br>
-          <br>
-          You can also follow me on social networks<br>
-          <a href="https://www.youtube.com/channel/UCwsY0IN54VRMe2YPX16XVZA?view_as=subscriber" style="color: rgb(122, 113, 254);">-Youtube</a><br>
-          <a href="https://www.instagram.com/minerallov/" style="color: rgb(122, 113, 254);">-instagram Minerallov</a><br>
-          <a href="https://www.linkedin.com/in/michael-pons/" style="color: rgb(122, 113, 254);">-LinkedIn</a><br>
-          <a href="https://twitter.com/MineralloT" style="color: rgb(122, 113, 254);">-Twitter</a><br>
-          <a href="https://www.facebook.com/michaelpons.geo" style="color: rgb(122, 113, 254);">-Facebook</a>   
-        <center></center><a class="twitter-timeline" href="https://twitter.com/MichaPons" style="color: rgb(122, 113, 254);">Tweets by Michael</a></center>
-        <center><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+  <!-- === Banner === -->
+  <div class="banner">
+    <h1>Social Networks</h1>
+    <h3>Science Communication • Outreach • Collaboration</h3>
+  </div>
+
+  <!-- === Content === -->
+  <div class="social-networks-content">
+    <h3>Online Presence</h3>
+    <p>      
+        Since 2021, I have been <strong>Co-Editor-in-Chief</strong> of the <strong><a href="https://blogs.egu.eu/divisions/gd/" target="_blank">EGU Geodynamics Blog</a></strong>, after serving as a regular editor for several years. This platform receives worldwide attention, with over <strong>60,000 readers each year</strong>. My role involves coordinating an international editorial team, promoting early-career researchers, and highlighting emerging topics in tectonics, mantle dynamics, and numerical modeling.<br><br>
+      
+        I am also involved in the <strong><a href="https://biogeodynamics.com/" target="_blank">COST Action CA23150 – EUROBIG</a></strong> (“Pan-European Biogeodynamics Network”), where I co-lead <strong>Working Package 4 (WP4)</strong> dedicated to outreach, education, and digital networking. Our aim is to connect geodynamics, climate, and biological sciences through collaborative, interdisciplinary initiatives.<br><br>
+      
+        <strong><a href="https://sciansblog.wordpress.com/" target="_blank">SciANS</a></strong> is a blog where I share insights about geodynamics, publications, and science communication, bridging my interests in numerical modeling, visualization, and outreach. It serves as a personal space to communicate science in accessible ways, connect research communities, and discuss ideas across disciplines.<br><br>
+      
+        <strong><a href="https://sites.google.com/site/knowlapps/" target="_blank">Knowlapps – Geolapps</a></strong> was my first educational website, created to share my passion for geology and science. It contains lectures, field experiences, and early research projects that reflect my formative years in Earth sciences.
       </p>
+      
+
+    <h3>Follow Me</h3>
+    <div class="social-links">
+      <a href="https://www.youtube.com/channel/UCwsY0IN54VRMe2YPX16XVZA" target="_blank">🎥 YouTube</a>
+      <a href="https://www.instagram.com/minerallov/" target="_blank">📸 Instagram (@minerallov)</a>
+      <a href="https://www.linkedin.com/in/michael-pons/" target="_blank">💼 LinkedIn</a>
+      <a href="https://twitter.com/MineralloT" target="_blank">🐦 Twitter (X)</a>
+      <a href="https://www.facebook.com/michaelpons.geo" target="_blank">📘 Facebook</a>
     </div>
 
+    <h3>Latest Tweets</h3>
+    <center>
+      <a class="twitter-timeline" data-height="500" data-theme="light" href="https://twitter.com/MichaPons">Tweets by @MichaPons</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </center>
+  </div>
 </body>
-
 </html>

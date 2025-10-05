@@ -1,83 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        /* .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        } */
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f7f7f7;
+      color: #111;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-        .publications-content {
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
+    /* === Banner === */
+    .banner {
+      position: relative;
+      text-align: center;
+      color: white;
+      background: url('img/background_fire_ice.png') no-repeat center center/cover;
+      padding: 100px 20px 80px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
 
-        h3 {
-            margin-top: 0;
-        }
+    .banner h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
 
-        ol {
-            margin-top: 0;
-            padding-left: 20px;
-        }
+    .banner h3 {
+      font-weight: 500;
+      font-size: clamp(18px, 2vw, 22px);
+      margin-top: 10px;
+      color: #fdd835;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
 
-        li {
-            margin-bottom: 10px;
-        }
+    /* === Section Containers === */
+    .pub-section {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 40px 50px;
+    }
 
-        p {
-            color: #333;
-        }
+    h3 {
+      color: #002b5b;
+      font-size: 1.6rem;
+      text-align: center;
+      margin-bottom: 5px;
+    }
 
-    </style>
+    h3::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #fdd835;
+      margin: 10px auto 20px;
+      border-radius: 2px;
+    }
+
+    ol {
+      margin-top: 10px;
+      padding-left: 25px;
+      color: #222;
+    }
+
+    li {
+      margin-bottom: 15px;
+      text-align: justify;
+      font-weight: 300;
+    }
+
+    strong {
+      color: #002b5b;
+      font-weight: 600;
+    }
+
+    a {
+      color: #4e6eff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Responsive === */
+    @media (max-width: 700px) {
+      .pub-section {
+        padding: 25px;
+        margin: 30px 10px;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
-<body>
-    <!-- <div class="container"> -->
-        <div class="publications-content">
-            <h3>Publications</h3>
-            <ol>
-                <li>Pons, M., (Thesis submitted, 16.11.2022), The nature of the tectonic shortening in Central Andes.</li>
-                <li>Pons, M., Rodriguez Piceda, C., Sobolev, S.V., Scheck-Wenderoth, M., & Barrionuevo, M, (In preparation - Tectonics), The role of inherited structures and subduction geometry on the strain localization in Southern Central Andes.</li>
-                <li>Pons, M., Rodriguez Piceda, C., Sobolev, S.V., & Scheck-Wenderoth, M, (In preparation - Nature Com), Flat slab migration induces large scale crustal rotation in Southern Central Andes.</li>
-                <li>Pons, M., Sobolev, S. V., Liu, S., & Neuharth, D. (2022). Hindered trench migration due to slab steepening controls the formation of the Central Andes. Journal of Geophysical Research: Solid Earth, e2022JB025229.</li>
-                <li>Rodriguez Piceda, C., Scheck-Wenderoth, M., Bott, J., Gomez Dacal, M. L., Cacace, M., Pons, M., ... & Strecker, M. R. (2022). Controls of the lithospheric thermal field of an ocean-continent subduction zone: the southern Central Andes. Lithosphere, 2022(1), 2237272.</li>
-                <li>Liu, S., Sobolev, S. V., Babeyko, A. Y., & Pons, M. (2022). Controls of the Foreland Deformation Pattern in the Orogen‐Foreland Shortening System: Constraints from High‐Resolution Geodynamic Models. Tectonics, 41(2), e2021TC007121.</li>
-            </ol>
 
-            <h3>Talks</h3>
-            <ol>
-                <li>Pons, M., Sobolev, S.V., Piceda, C. R., Sibiao, L., Neuharth, D., Scheck-Wenderoth, M., & Strecker, M. (2022, August). Plate interaction, subduction dynamics the role of the flat-slab subduction in the Central Andes. IPOC workshop 2024.</li>
-                <li>Pons, M., Piceda, C. R., Sobolev, S.V., Scheck-Wenderoth, M., & Strecker, M. Understanding the role of structural inheritance and flat slab geometry in Central Andes. EGU conference 2023.</li>
-                <li>Pons, M., Sobolev, S.V., Sibiao, L., & Neuharth, D, (2022, May). Variability of the shortening rate in Central Andes controlled by subduction dynamics and interaction between slab and overriding plate. Invited talk at FU Berlin 2023.</li>
-                <li>Pons, M., Sobolev, S.V., Piceda, C. R., Sibiao, L., Neuharth, D., Scheck-Wenderoth, M., & Strecker, M. (2022, August). Plate interaction, subduction dynamics the role of the flat-slab subduction in the Central Andes. Ada Lovelace workshop 2022.</li>
-                <li>Pons, M., Sobolev, S.V., Sibiao, L., & Neuharth, D, (2022, May). Variability of the shortening rate in Central Andes controlled by subduction dynamics and interaction between slab and overriding plate. EGU conference 2022.</li>
-                <li>Pons, M., & Sobolev, S.V., (2021, September). Control of subduction dynamics on shortening magnitude in the Central Andes: a thermomechanical modeling approach. GEOMOD conference 2021.</li>
-                <li>Pons, M., & Sobolev, S.V., (2021, August). Interplay between the shortening magnitude and subduction dynamics in the Central Andes. Geodynamics WS 2021.</li>
-                <li>Piceda, C. R., Scheck-Wenderoth, M., Bott, J., Dacal, M. L. G., Pons, M., Prezzi, C., & Strecker, M. (2021). Unravelling the thermal state of the southern Central Andes and its controlling factors (No. EGU21-5214). Copernicus Meetings.</li>
-                <li>Pons, M., & Sobolev, S., (2020, May). The nature of the North-South change of the magnitude of tectonic shortening in Central Andes at Altiplano-Puna latitudes: a thermomechanical modeling approach. In EGU General Assembly Conference Abstracts (p. 8177).</li>
-                <li>Pons, M., & Sobolev, S.V., (2019). The nature of the North-South change of the magnitude of tectonic shortening in Central Andes at Altiplano-Puna latitudes: a thermomechanical modeling approach. 25th Latin-American Colloquium (LAC), Hamburg, Germany. Program and Abstracts (p. 61).</li>
-                <li>Pons, M., Sobolev, S.V., Liu, S., Glerum, A Rodriguez Piceda, C., (2019). The nature of the North-South change of the magnitude of tectonic shortening in Central Andes at Altiplano-Puna latitudes: a thermomechanical modeling approach.5th International Young Earth Scientists Congress (YES). Berlin. Book of abstracts (p.49).</li>
-                <li>Pons, M., Sobolev, S.V., Liu, S., Glerum, A Rodriguez Piceda, C., (2019). The nature of the North-South change of the magnitude of tectonic shortening in Central Andes at Altiplano-Puna latitudes: a thermomechanical modeling approach. Topoeurope, Granada.</li>
-                <li>Pons, M., Sobolev, S.V., Liu, S., Glerum, A Rodriguez Piceda, C., (2019). The nature of the North-South change of the magnitude of tectonic shortening in Central Andes at Altiplano-Puna latitudes: a thermomechanical modeling approach. Deep Earth summer school , Bacelonnette.</li>
-            </ol>
-        <!-- </div> -->
-    </div>
+<body>
+  <!-- === Banner === -->
+  <div class="banner">
+    <h1>Publications & Presentations</h1>
+    <h3>Peer-reviewed articles, conference talks, and abstracts</h3>
+  </div>
+
+  <!-- === Publications === -->
+  <section class="pub-section">
+    <h3>Publications</h3>
+    <ol>
+      <li><strong>Pons, M.</strong> (Thesis submitted, 16.11.2022). <em>The nature of the tectonic shortening in Central Andes.</em></li>
+
+      <li><strong>Pons, M.</strong>, Rodriguez Piceda, C., Sobolev, S.V., Scheck-Wenderoth, M., & Barrionuevo, M. (In preparation – <em>Tectonics</em>). <em>The role of inherited structures and subduction geometry on strain localization in the Southern Central Andes.</em></li>
+
+      <li><strong>Pons, M.</strong>, Rodriguez Piceda, C., Sobolev, S.V., & Scheck-Wenderoth, M. (In preparation – <em>Nature Communications</em>). <em>Flat slab migration induces large-scale crustal rotation in the Southern Central Andes.</em></li>
+
+      <li><strong>Pons, M.</strong>, Sobolev, S. V., Liu, S., & Neuharth, D. (2022). Hindered trench migration due to slab steepening controls the formation of the Central Andes. <em>Journal of Geophysical Research: Solid Earth</em>, e2022JB025229. <a href="https://doi.org/10.1029/2022JB025229">[DOI]</a></li>
+
+      <li>Rodriguez Piceda, C., Scheck-Wenderoth, M., Bott, J., Gomez Dacal, M. L., Cacace, M., <strong>Pons, M.</strong>, ... & Strecker, M. R. (2022). Controls of the lithospheric thermal field of an ocean–continent subduction zone: the southern Central Andes. <em>Lithosphere</em>, 2022(1), 2237272.</li>
+
+      <li>Liu, S., Sobolev, S. V., Babeyko, A. Y., & <strong>Pons, M.</strong> (2022). Controls of the foreland deformation pattern in the orogen–foreland shortening system: Constraints from high-resolution geodynamic models. <em>Tectonics</em>, 41(2), e2021TC007121.</li>
+    </ol>
+  </section>
+
+  <!-- === Talks === -->
+  <section class="pub-section">
+    <h3>Talks & Conference Contributions</h3>
+    <ol>
+      <li><strong>Pons, M.</strong>, Sobolev, S.V., Rodriguez Piceda, C., Sibiao, L., Neuharth, D., Scheck-Wenderoth, M., & Strecker, M. (2024). <em>Plate interaction and subduction dynamics: the role of flat-slab subduction in the Central Andes.</em> IPOC Workshop 2024.</li>
+
+      <li><strong>Pons, M.</strong>, Rodriguez Piceda, C., Sobolev, S.V., Scheck-Wenderoth, M., & Strecker, M. (2023). <em>Understanding the role of structural inheritance and flat-slab geometry in Central Andes.</em> EGU General Assembly 2023.</li>
+
+      <li><strong>Pons, M.</strong>, Sobolev, S.V., Sibiao, L., & Neuharth, D. (2023). <em>Variability of the shortening rate in Central Andes controlled by subduction dynamics and slab–overriding plate interaction.</em> Invited talk, FU Berlin.</li>
+
+      <li><strong>Pons, M.</strong>, Sobolev, S.V., Rodriguez Piceda, C., Sibiao, L., Neuharth, D., Scheck-Wenderoth, M., & Strecker, M. (2022). <em>Plate interaction and subduction dynamics: the role of flat-slab subduction in the Central Andes.</em> Ada Lovelace Workshop 2022.</li>
+
+      <li><strong>Pons, M.</strong>, Sobolev, S.V., Sibiao, L., & Neuharth, D. (2022). <em>Variability of the shortening rate in Central Andes controlled by subduction dynamics and slab–overriding plate interaction.</em> EGU Conference 2022.</li>
+
+      <li><strong>Pons, M.</strong>, & Sobolev, S.V. (2021). <em>Control of subduction dynamics on shortening magnitude in the Central Andes: a thermomechanical modeling approach.</em> GEOMOD 2021.</li>
+
+      <li><strong>Pons, M.</strong>, & Sobolev, S.V. (2021). <em>Interplay between the shortening magnitude and subduction dynamics in the Central Andes.</em> Geodynamics Workshop 2021.</li>
+
+      <li>Rodriguez Piceda, C. R., Scheck-Wenderoth, M., Bott, J., Gomez Dacal, M. L., <strong>Pons, M.</strong>, Prezzi, C., & Strecker, M. (2021). <em>Unravelling the thermal state of the southern Central Andes and its controlling factors.</em> EGU21-5214, Copernicus Meetings.</li>
+
+      <li><strong>Pons, M.</strong>, & Sobolev, S.V. (2020). <em>The nature of the North–South change in tectonic shortening magnitude in Central Andes at Altiplano–Puna latitudes: a thermomechanical modeling approach.</em> EGU 2020.</li>
+
+      <li><strong>Pons, M.</strong>, & Sobolev, S.V. (2019). <em>The nature of the North–South change of tectonic shortening magnitude in the Central Andes.</em> 25th Latin-American Colloquium (LAC), Hamburg.</li>
+
+      <li><strong>Pons, M.</strong>, Sobolev, S.V., Liu, S., Glerum, A., & Rodriguez Piceda, C. (2019). <em>The nature of the North–South change of tectonic shortening magnitude in the Central Andes.</em> 5th YES Congress, Berlin.</li>
+
+      <li><strong>Pons, M.</strong>, Sobolev, S.V., Liu, S., Glerum, A., & Rodriguez Piceda, C. (2019). <em>The nature of the North–South change of tectonic shortening magnitude in the Central Andes.</em> TopoEurope, Granada.</li>
+
+      <li><strong>Pons, M.</strong>, Sobolev, S.V., Liu, S., Glerum, A., & Rodriguez Piceda, C. (2019). <em>The nature of the North–South change of tectonic shortening magnitude in the Central Andes.</em> Deep Earth Summer School, Barcelonnette.</li>
+    </ol>
+  </section>
 </body>
 </html>
