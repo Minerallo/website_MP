@@ -1,12 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<div class="cv-section" style="margin-top: 20px;">
-    <h3>My Curriculum Vitae</h3>
-    <iframe src="Documents/CV_Mika.pdf" style="width: 100%; height: 100vh;"></iframe>
-    <a href="Documents/CV_Mika.pdf" download class="download-link">Download my CV</a>
-</div>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curriculum Vitae - Michael Pons</title>
 
+  <!-- Poppins font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f7f7f7;
+      color: #111;
+    }
+
+    /* === Banner === */
+    .banner {
+      position: relative;
+      text-align: center;
+      color: white;
+      background: url('img/background_fire_ice.png') no-repeat center center/cover;
+      padding: 100px 20px 80px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .banner h3 {
+      font-weight: 500;
+      font-size: clamp(18px, 2vw, 24px);
+      margin-top: 10px;
+      color: #fdd835;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .banner h1, .banner h3 {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
+    .banner h3 { animation-delay: 0.4s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* === CV Section === */
+    .cv-section {
+      background-color: white;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .cv-section h3 {
+      font-size: 1.8rem;
+      color: #002b5b;
+      margin-bottom: 30px;
+    }
+
+    .cv-section iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .download-link {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #002b5b;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .download-link:hover {
+      background-color: #004a9f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- === Banner === -->
+  <div class="banner">
+    <h1>Dr. Michael Pons</h1>
+    <h3>Postdoctoral Researcher in Geodynamic Modelling | GFZ Potsdam</h3>
+  </div>
+
+  <!-- === CV Section === -->
+  <div class="cv-section">
+    <h3>My Curriculum Vitae</h3>
+    <iframe src="Documents/CV_Mika.pdf"></iframe>
+    <a href="Documents/CV_Mika.pdf" download class="download-link">Download my CV</a>
+  </div>
+
+</body>
+</html>
