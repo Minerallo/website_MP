@@ -14,7 +14,7 @@
       color: #111;
       overflow-x: hidden;
     }
-
+  
     /* === Banner === */
     .banner {
       position: relative;
@@ -24,14 +24,14 @@
       padding: 100px 20px 80px 20px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
-
+  
     .banner h1 {
       font-size: clamp(32px, 4vw, 48px);
       font-weight: 700;
       margin: 0;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     }
-
+  
     .banner h3 {
       font-weight: 500;
       font-size: clamp(18px, 2vw, 22px);
@@ -39,7 +39,7 @@
       color: #fdd835;
       text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
     }
-
+  
     /* === Gallery Grid === */
     .video-container {
       display: grid;
@@ -50,7 +50,7 @@
       max-width: 1300px;
       margin: 0 auto;
     }
-
+  
     /* === Card === */
     .video {
       background: white;
@@ -59,12 +59,12 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
+  
     .video:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
-
+  
     iframe, img {
       width: 100%;
       height: 300px;
@@ -72,14 +72,14 @@
       border: none;
       object-fit: cover;
     }
-
+  
     .video-title {
       margin-top: 1rem;
       font-size: 1.3rem;
       font-weight: 600;
       color: #002b5b;
     }
-
+  
     .video-description {
       margin-top: 1rem;
       font-size: 1rem;
@@ -87,42 +87,72 @@
       color: #222;
       line-height: 1.6;
     }
-
+  
     .info {
       text-align: center;
       margin: 30px auto 10px;
       font-size: 1.1rem;
       color: #333;
     }
-
+  
     .image_label {
-        text-align: center;
-        line-height: 1.8;
-        font-size: 1.05rem;
-        color: #222;
-        margin: 0 0 1.2rem 0;
-        font-weight: 400;
-        font-family: 'Poppins', sans-serif;
-        }
-
+      text-align: center;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: #222;
+      margin: 0 0 1.2rem 0;
+      font-weight: 400;
+      font-family: 'Poppins', sans-serif;
+    }
+  
     /* === 3D Model Section === */
     .viewer-section {
-    text-align: center;
-    margin: 80px auto;
-    padding: 0 60px;        /* ✅ Adds left/right space (border effect) */
-    max-width: 1800px;      /* Keeps layout centered on wide screens */
+      text-align: center;
+      margin: 80px auto;
+      padding: 0 60px;
+      max-width: 1800px;
     }
-
-    iframe.model-viewer {
-    display: block;
-    margin: 0 auto;
-    border: none;
-    border-radius: 12px;
-    width: 100%;            /* fills the padded container */
-    height: 800px;          /* taller 3D viewer */
-    background: #fff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  
+    .model-selector {
+      margin-bottom: 20px;
+      text-align: center;
     }
+  
+    .model-selector label {
+      font-weight: 500;
+      margin-right: 10px;
+      color: #002b5b;
+    }
+  
+    select {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid #aaa;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      background-color: #fff;
+      transition: all 0.2s ease-in-out;
+    }
+  
+    select:hover,
+    select:focus {
+      border-color: #002b5b;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 43, 91, 0.2);
+    }
+  
+    .model-viewer {
+      display: block;
+      margin: 0 auto;
+      width: 90%;
+      height: 800px;
+      border: none;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: opacity 0.3s ease;
+    }
+  
     /* === Responsive === */
     @media (max-width: 600px) {
       .banner {
@@ -131,8 +161,28 @@
       iframe, img {
         height: 250px;
       }
+      .model-viewer {
+        height: 500px;
+        width: 100%;
+      }
     }
+
+    #loadingOverlay {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.8);
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: 500;
+    color: #002b5b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
   </style>
+  
 </head>
 
 <body>
@@ -208,7 +258,7 @@
 
 
 
-  <section class="viewer-section">
+  <!-- <section class="viewer-section">
     <p class="image_label">
       Click below to visualise a 3D global model computed with ASPECT. 
       The model shows self-consistent topography from geodynamical processes.
@@ -219,8 +269,55 @@
       src="Models/SceneExplorer.html?fileURL=Earth_3d_R01f.vtkjs"
       allowfullscreen>
     </iframe>
+  </section> -->
+  
+
+  <section class="viewer-section">
+    <p class="image_label">
+      Click below to visualise a 3D global model computed with ASPECT.
+      The model shows self-consistent topography from geodynamical processes.
+    </p>
+  
+    <!-- Model selector -->
+    <div class="model-selector">
+      <label for="modelSelect">Choose a model:</label>
+      <select id="modelSelect">
+        <option value="Earth_3d_R01f.vtkjs">🌍 Global Earth model</option>
+        <option value="SA_model_3dv3_colormodified_contours_slice.vtkjs">🗻 Andes subduction model</option>
+      </select>
+    </div>
+  
+    <!-- 3D Viewer -->
+    <iframe
+      id="modelViewer"
+      class="model-viewer"
+      src="Models/SceneExplorer.html?fileURL=Earth_3d_R01f.vtkjs"
+      allowfullscreen>
+    </iframe>
   </section>
   
+  <script>
+    const select = document.getElementById('modelSelect');
+    const viewer = document.getElementById('modelViewer');
+  
+    select.addEventListener('change', function() {
+      const selectedModel = this.value;
+  
+      // Add a timestamp to force browser to reload
+      const timestamp = new Date().getTime();
+      const newSrc = `Models/SceneExplorer.html?fileURL=${selectedModel}&t=${timestamp}`;
+  
+      // Clear the iframe first to reset the viewer
+      viewer.style.opacity = 0;
+      viewer.src = '';
+  
+      // Reload with small delay for smooth transition
+      setTimeout(() => {
+        viewer.src = newSrc;
+        viewer.onload = () => viewer.style.opacity = 1;
+      }, 200);
+    });
+  </script>
 
 </body>
 </html>
