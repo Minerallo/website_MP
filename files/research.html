@@ -16,65 +16,140 @@
       overflow-x: hidden;
     }
 
-    /* === Section Containers === */
-    .research-section {
+    /* === Banner === */
+    .banner {
+      position: relative;
+      text-align: center;
+      color: white;
+      background: url('img/background_fire_ice.png') no-repeat center center/cover;
+      padding: 100px 20px 80px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      margin: 0;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .banner h3 {
+      font-weight: 500;
+      font-size: clamp(18px, 2vw, 24px);
+      margin-top: 10px;
+      color: #fdd835;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    .banner h1, .banner h3 {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    .banner h3 {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* === Layout === */
+    #research-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 60px 20px;
+    }
+
+    .research-card {
       background: white;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 40px 50px;
+      max-width: 1000px;
+      width: 100%;
+      padding: 30px 40px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
     }
 
-    h3 {
+    .research-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .research-card h3 {
       color: #002b5b;
       font-size: 1.6rem;
+      margin-bottom: 10px;
       text-align: center;
-      margin-bottom: 5px;
     }
 
-    h3::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 3px;
-      background: #fdd835;
-      margin: 10px auto 20px;
-      border-radius: 2px;
-    }
-
-    .centered-text {
-      text-align: center;
-      margin: 5px 0;
+    .subtitle {
+      font-weight: 600;
       color: #222;
-      font-weight: 400;
+      text-align: center;
+      margin-bottom: 10px;
     }
 
-    .research_description {
-      text-align: justify;
-      margin-top: 20px;
-      color: #333;
-      font-weight: 300;
+    .meta {
+      color: #555;
+      font-size: 0.95rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* --- Collapsible section --- */
+    .extra-content {
+      max-height: 350px;
+      overflow: hidden;
+      position: relative;
+      transition: max-height 0.7s ease;
+    }
+
+    .research-card.expanded .extra-content {
+      max-height: 3000px;
+    }
+
+    /* Gradient overlay before expanding */
+    .extra-content::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), white 90%);
+      transition: opacity 0.4s ease;
+    }
+
+    .research-card.expanded .extra-content::after {
+      opacity: 0;
+      pointer-events: none;
     }
 
     img {
       display: block;
-      margin: 25px auto 10px;
+      width: 100%;
       border-radius: 10px;
-      max-width: 100%;
-      height: auto;
+      margin: 20px auto;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     }
 
-    i {
-      color: #555;
+    .caption {
+      text-align: center;
+      color: #666;
       font-size: 0.9rem;
+      margin-top: -10px;
+      margin-bottom: 20px;
     }
 
-    cite {
-      color: #444;
-      font-size: 0.95rem;
-      line-height: 1.6;
+    .description {
+      text-align: justify;
+      color: #333;
+      font-weight: 300;
     }
 
     a {
@@ -86,13 +161,31 @@
       text-decoration: underline;
     }
 
+    .toggle-btn {
+      display: block;
+      margin: 15px auto 0;
+      background-color: #002b5b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 22px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      z-index: 2;
+      position: relative;
+    }
+
+    .toggle-btn:hover {
+      background-color: #004a8f;
+    }
+
     @media (max-width: 700px) {
-      .research-section {
+      .research-card {
         padding: 25px;
-        margin: 30px 10px;
       }
 
-      h3 {
+      .research-card h3 {
         font-size: 1.3rem;
       }
     }
@@ -100,114 +193,121 @@
 </head>
 
 <body>
-
-  <!-- === PhD Project === -->
-  <section class="research-section">
-    <h3>PhD Thesis Project (2018–2022)</h3>
-    <p class="centered-text"><strong>The nature of the North–South change of tectonic shortening in Central Andes at Altiplano–Puna latitudes: a thermomechanical modeling approach</strong></p>
-    <p class="centered-text"><u><strong>Advisor:</strong></u> Prof. Stephan Sobolev</p>
-    <p class="centered-text"><u><strong>Keywords:</strong></u> Andes, geodynamics, subduction, shortening, orogen, plateau</p>
-
-    <p class="research_description">
-      The subduction of the oceanic Nazca Plate under the continental South American Plate has been active since at least 180 Ma.
-      However, the cause of the initiation of the shortening of the Andes during the last 50 Myr, and the reasons behind the spatial and temporal variations in shortening magnitude, remain debated.
-      In the case of the Central Andes, the South American plate is advancing westwards, forcing the trench to retreat and the Nazca plate to roll back. 
-      However, paleo-reconstructions show that trench retreat has slowed over the past 50 Myr, producing Andean shortening as the South American plate overtakes the trench.
-      A possible cause of this slowdown is the anchoring of the slab in the lower mantle (Faccenna et al., 2017).
-      Our models, built with <strong>ASPECT</strong>, test how variations in the overriding plate’s strength control trench rollback and deformation localization across the Altiplano–Puna plateau.
-    </p>
-
-    <img src="img/andes_subduction.png" alt="Andes subduction model">
-    <center><i>2D subduction model of Central Andes at 21°S</i></center>
-
-    <p class="centered-text"><strong>References</strong></p>
-    <cite>
-      Faccenna, C. et al. (2017). Initiation of the Andean orogeny by lower mantle subduction. <em>Earth Planet. Sci. Lett.</em><br>
-      Oncken, O. et al. (2012). Strain accumulation controls failure of a plate boundary zone. <em>Geochem. Geophys. Geosyst.</em><br>
-      Sobolev, S. V. et al. (2006). Mechanism of the Andean orogeny: insight from numerical modeling. In <em>The Andes</em>. Springer.
-    </cite>
+  <!-- === Banner === -->
+  <section class="banner">
+    <h1>Research Projects</h1>
+    <h3>Exploring the geodynamics shaping our planet</h3>
   </section>
 
-  <!-- === M2 Project 2017 === -->
-  <section class="research-section">
-    <h3>M2 Research Project (2017)</h3>
-    <p class="centered-text"><strong>Earthquakes impact on GRACE gravimetric signal at global scale</strong></p>
-    <p class="centered-text"><u><strong>Advisors:</strong></u> Dr. Maxime Mouyen, Prof. Philippe Steer, Prof. Laurent Longuevergne</p>
-    <p class="centered-text"><u><strong>Keywords:</strong></u> GRACE, scaling laws, earthquakes, gravity change</p>
+  <main id="research-container">
 
-    <p class="research_description">
-      The GRACE satellite mission (Gravity Recovery and Climate Experiment) measures monthly variations in Earth's gravity field caused by mass redistribution.
-      While hydrology and ice melting dominate this signal, large earthquakes can also produce measurable changes.
-      This study models the co-seismic gravity perturbations associated with global seismicity (GCMT catalog, 2002–2014).
-      Modeled signals are compared with GRACE data from CSR (Austin, TX). 
-      Large earthquakes (Mw ≥ 8) show consistent signatures between models and GRACE observations.
-    </p>
+    <!-- === PhD Project === -->
+    <section class="research-card">
+      <h3>PhD Thesis Project (2018–2022)</h3>
+      <p class="subtitle">The nature of the North–South change of tectonic shortening in Central Andes</p>
+      <p class="meta"><strong>Advisor:</strong> Prof. Stephan Sobolev<br><strong>Keywords:</strong> Andes, geodynamics, subduction, shortening, plateau</p>
 
-    <img src="img/grace1.png" alt="GRACE co-seismic signal">
-    <center><i>Major mechanisms responsible for co-seismic gravity change (modified from Tanaka, 2017)</i></center>
+      <div class="extra-content">
+        <p class="description">
+          The subduction of the oceanic Nazca Plate under the continental South American Plate has been active since at least 180 Ma.
+          However, the cause of the initiation of the shortening of the Andes during the last 50 Myr, and the reasons behind the spatial and temporal variations in shortening magnitude, remain debated.
+          Our models, built with <strong>ASPECT</strong>, test how variations in the overriding plate’s strength control trench rollback and deformation localization across the Altiplano–Puna plateau.
+        </p>
+        <img src="img/andes_subduction.png" alt="Andes subduction model">
+        <p class="caption"><i>2D subduction model of Central Andes at 21°S</i></p>
+        <p class="description"><strong>References:</strong><br>
+          Faccenna, C. et al. (2017). Initiation of the Andean orogeny by lower mantle subduction. <em>Earth Planet. Sci. Lett.</em><br>
+          Oncken, O. et al. (2012). Strain accumulation controls failure of a plate boundary zone. <em>Geochem. Geophys. Geosyst.</em><br>
+          Sobolev, S. V. et al. (2006). Mechanism of the Andean orogeny. In <em>The Andes</em>. Springer.
+        </p>
+      </div>
 
-    <img src="img/grace2.jpg" alt="GRACE cumulative map">
-    <center><i>Cumulative gravimetric trend map (2002–2014) highlighting earthquake-related signals near Sumatra and Japan.</i></center>
-  </section>
+      <button class="toggle-btn">Show more</button>
+    </section>
 
-  <!-- === M2 Project 2016 === -->
-  <section class="research-section">
-    <h3>M2 Research Project (2016)</h3>
-    <p class="centered-text"><strong>Topographic evolution of Deccan Traps using DEM modeling</strong></p>
-    <p class="centered-text"><u><strong>Advisors:</strong></u> Prof. Claudio Faccenna, Dr. Andrea Sembroni</p>
-    <p class="centered-text"><u><strong>Keywords:</strong></u> Western Ghats, flexure, dynamic, isostasy, topography</p>
+    <!-- === M2 Project 2017 === -->
+    <section class="research-card">
+      <h3>M2 Research Project (2017)</h3>
+      <p class="subtitle">Earthquakes impact on GRACE gravimetric signal at global scale</p>
+      <p class="meta"><strong>Advisors:</strong> Dr. Maxime Mouyen, Prof. Philippe Steer, Prof. Laurent Longuevergne</p>
 
-    <p class="research_description">
-      The Deccan Traps provide a key natural laboratory for studying lithospheric processes in India.
-      This project used GIS-based modeling to analyze the long-wavelength tilting of the plateau and evaluate the relative role of flexural unloading, dynamic topography, and isostasy.
-      Results show that the regional tilt is best explained by lithospheric thinning beneath the Western Ghats escarpment, consistent with isostatic control rather than erosion-driven flexure.
-    </p>
+      <div class="extra-content">
+        <p class="description">
+          The GRACE satellite mission measures monthly variations in Earth's gravity field caused by mass redistribution.
+          This study models co-seismic gravity perturbations (GCMT 2002–2014) and compares them with GRACE data.
+          Large earthquakes (Mw ≥ 8) show consistent signatures between modeled and observed signals.
+        </p>
+        <img src="img/grace1.png" alt="GRACE co-seismic signal">
+        <p class="caption"><i>Mechanisms responsible for co-seismic gravity change (modified from Tanaka, 2017)</i></p>
+        <img src="img/grace2.jpg" alt="GRACE cumulative map">
+        <p class="caption"><i>Cumulative gravimetric trend map (2002–2014) highlighting earthquake-related signals near Sumatra and Japan.</i></p>
+      </div>
 
-    <img src="img/deccan.jpg" alt="Deccan traps flexure">
-    <center><i>Deflection profiles showing variable elastic thicknesses explaining inland topography in central Deccan.</i></center>
-  </section>
+      <button class="toggle-btn">Show more</button>
+    </section>
 
-  <!-- === M1 Project 2015 === -->
-  <section class="research-section">
-    <h3>M1 Research Project (2015)</h3>
-    <p class="centered-text"><strong>Paleomagnetic study of the Upper Jurassic Qitianling granite (South China)</strong></p>
-    <p class="centered-text"><u><strong>Advisors:</strong></u> Prof. Yan Chen, Prof. Hongsheng Liu</p>
-    <p class="centered-text"><u><strong>Keywords:</strong></u> Qitianling, Mongol-Okhotsk, paleomagnetism, tectonics</p>
+    <!-- === M2 Project 2016 === -->
+    <section class="research-card">
+      <h3>M2 Research Project (2016)</h3>
+      <p class="subtitle">Topographic evolution of Deccan Traps using DEM modeling</p>
+      <p class="meta"><strong>Advisors:</strong> Prof. Claudio Faccenna, Dr. Andrea Sembroni</p>
 
-    <p class="research_description">
-      Paleomagnetic analysis of the Qitianling granite constrains the timing of the Mongol–Okhotsk Ocean closure.
-      Magnetic fabric and demagnetization data show that the pluton cooled and acquired its remanence around 150 Ma.
-      Comparison of the resulting South China Block pole with those of North China and Siberia implies that the ocean was still open in the Late Jurassic, with a minimum width of ~500 km.
-    </p>
+      <div class="extra-content">
+        <p class="description">
+          The Deccan Traps provide a natural laboratory for studying lithospheric processes in India.
+          GIS-based modeling shows that regional tilt is best explained by lithospheric thinning beneath the Western Ghats, consistent with isostatic control.
+        </p>
+        <img src="img/deccan.jpg" alt="Deccan traps flexure">
+        <p class="caption"><i>Deflection profiles showing variable elastic thicknesses explaining inland topography in central Deccan.</i></p>
+      </div>
 
-    <img src="img/paleomag.jpg" alt="Paleomagnetic results">
-    <center><i>Stereographic projection of paleomagnetic poles for SCB, NCB, and Eurasia, indicating crustal shortening.</i></center>
+      <button class="toggle-btn">Show more</button>
+    </section>
 
-    <p class="research_description">
-      This work contributed to the publication:<br>
-      <a href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018JB015761">
-        Liu, H., Martelet, G., Wang, B., et al. (2018). Incremental emplacement of the late Jurassic mid-crustal Qitianling pluton, South China. 
-        <em>J. Geophys. Res.: Solid Earth</em>.
-      </a>
-    </p>
-  </section>
+    <!-- === M1 Project 2015 === -->
+    <section class="research-card">
+      <h3>M1 Research Project (2015)</h3>
+      <p class="subtitle">Paleomagnetic study of the Upper Jurassic Qitianling granite (South China)</p>
+      <p class="meta"><strong>Advisors:</strong> Prof. Yan Chen, Prof. Hongsheng Liu</p>
 
-  <!-- === L3 Project 2014 === -->
-  <section class="research-section">
-    <h3>L3 Research Project (2014)</h3>
-    <p class="centered-text"><strong>Finite strain analysis using the Meere & Mulchrone method</strong></p>
-    <p class="centered-text"><u><strong>Advisor:</strong></u> Prof. Patrick A. Meere</p>
-    <p class="centered-text"><u><strong>Example:</strong></u> Trabeg Formation Conglomerate (Tb1)</p>
+      <div class="extra-content">
+        <p class="description">
+          Paleomagnetic analysis of the Qitianling granite constrains the timing of the Mongol–Okhotsk Ocean closure.
+          The pluton cooled and acquired its remanence around 150 Ma, implying the ocean was still open in the Late Jurassic.
+        </p>
+        <img src="img/paleomag.jpg" alt="Paleomagnetic results">
+        <p class="caption"><i>Stereographic projection of paleomagnetic poles indicating crustal shortening.</i></p>
+        <p class="description">
+          <strong>Publication:</strong><br>
+          <a href="https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2018JB015761">
+            Liu, H., Martelet, G., Wang, B., et al. (2018). Incremental emplacement of the late Jurassic mid-crustal Qitianling pluton. 
+            <em>J. Geophys. Res.: Solid Earth</em>.
+          </a>
+        </p>
+      </div>
 
-    <img src="img/finite1.jpg" alt="Finite strain example 1">
-    <p class="research_description">Rf represents the ratio between each grain's major and minor axes. The φ angle is measured relative to the vertical axis, with left rotation being negative and right positive.</p>
+      <button class="toggle-btn">Show more</button>
+    </section>
 
-    <img src="img/finite2.jpg" alt="Finite strain results 1">
-    <p class="research_description">Mean Rs (average of Rf) values from multiple samples show small strain rate variations using the Mulchrone (2001) method.</p>
+    <!-- === L3 Project 2014 === -->
+    <section class="research-card">
+      <h3>L3 Research Project (2014)</h3>
+      <p class="subtitle">Finite strain analysis using the Meere & Mulchrone method</p>
+      <p class="meta"><strong>Advisor:</strong> Prof. Patrick A. Meere</p>
 
-    <img src="img/finite3.jpg" alt="Finite strain results 2">
-    <p class="research_description">Average Rs results from different methods show variability between techniques.</p>
-  </section>
+      <div class="extra-content">
+        <img src="img/finite1.jpg" alt="Finite strain example 1">
+        <p class="description">Rf represents the ratio between each grain's major and minor axes. The φ angle is measured relative to the vertical axis.</p>
+        <img src="img/finite2.jpg" alt="Finite strain results 1">
+        <p class="description">Mean Rs values show small strain rate variations using the Mulchrone (2001) method.</p>
+        <img src="img/finite3.jpg" alt="Finite strain results 2">
+        <p class="description">Average Rs results from different methods show variability between techniques.</p>
+      </div>
+
+      <button class="toggle-btn">Show more</button>
+    </section>
+
+  </main>
 
 </body>
 </html>
