@@ -63,6 +63,23 @@
       padding: 60px 20px;
     }
 
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      margin: 20px 0;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      z-index: 1;
+    }
+
     .research-card {
       background: white;
       border-radius: 12px;
@@ -120,14 +137,43 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 70px;
+      height: 120px;
       background: linear-gradient(to bottom, rgba(255,255,255,0), white 90%);
       transition: opacity 0.4s ease;
+      pointer-events: none;
+      z-index: 5;
     }
 
     .research-card.expanded .extra-content::after {
       opacity: 0;
       pointer-events: none;
+    }
+
+    .video-thumb {
+      position: relative;
+      display: block;
+    }
+
+    .video-thumb img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .video-thumb::after {
+      content: "▶";
+      position: absolute;
+      font-size: 60px;
+      color: white;
+      background: rgba(0,0,0,0.5);
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     img {
@@ -222,7 +268,18 @@
     
         <img src="img/research_MEET.jpg" alt="Global plate tectonics activity and erosional events">
         <p class="caption"><i>Evolution of sediments proxy, number of passive margins, glaciations over time and supercontinent cycle phases.</i></p>
+
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/CBOZlPRiAxc"
+          title="MEET Project video"
+          allowfullscreen>
+        </iframe>
       </div>
+
+      <p class="caption"><i>Overview of the MEET project and global plate tectonics modelling.</i></p>
+
+    </div>
     
       <button class="toggle-btn">Show more</button>
     </section>
@@ -239,8 +296,37 @@
           However, the cause of the initiation of the shortening of the Andes during the last 50 Myr, and the reasons behind the spatial and temporal variations in shortening magnitude, remain debated.
           Our models, built with <strong>ASPECT</strong>, test how variations in the overriding plate’s strength control trench rollback and deformation localization across the Altiplano–Puna plateau.
         </p>
+      
         <img src="img/andes_subduction.png" alt="Andes subduction model">
         <p class="caption"><i>2D subduction model of Central Andes at 21°S</i></p>
+      
+        <!-- ADD VIDEO HERE -->
+        <!-- <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/watch?v=llTvzuVcEs8"
+            title="PhD STRATEGY Project video"
+            allowfullscreen>
+          </iframe>
+        </div> -->
+
+        <p class="description">
+          <strong> STRATEGY PhD video overview long version </strong>
+        </p>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=Oz0Ueiz9daI" target="_blank">
+          <img src="img/research_strategy1.png" alt="STRATEGY PhD video overview long version">
+        </a>
+
+        <p class="description">
+          <strong> STRATEGY PhD video overview short version </strong>
+        </p>
+
+        <a class="video-thumb" href="https://www.youtube.com/watch?v=llTvzuVcEs8" target="_blank">
+          <img src="img/research_strategy1.png" alt="STRATEGY PhD video overview short version">
+        </a>
+      
+        <p class="caption"><i>Overview of the STRATEGY PhD modelling of Andean subduction.</i></p>
+      
         <p class="description"><strong>References:</strong><br>
           Faccenna, C. et al. (2017). Initiation of the Andean orogeny by lower mantle subduction. <em>Earth Planet. Sci. Lett.</em><br>
           Oncken, O. et al. (2012). Strain accumulation controls failure of a plate boundary zone. <em>Geochem. Geophys. Geosyst.</em><br>
@@ -269,6 +355,14 @@
         <p class="caption"><i>Cumulative gravimetric trend map (2002–2014) highlighting earthquake-related signals near Sumatra and Japan.</i></p>
       </div>
 
+      <!-- <div class="video-container">
+        <iframe 
+          src="https://youtu.be/TN38kaRLTIg?si=3lhtzg0E1_qXs6Xt"
+          title="Grace explained"
+          allowfullscreen>
+        </iframe>
+      </div> -->
+      
       <button class="toggle-btn">Show more</button>
     </section>
 
@@ -334,6 +428,19 @@
     </section>
 
   </main>
+
+  <script>
+    document.querySelectorAll(".toggle-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        const card = button.closest(".research-card");
+        card.classList.toggle("expanded");
+    
+        button.textContent = card.classList.contains("expanded")
+          ? "Show less"
+          : "Show more";
+      });
+    });
+    </script>
 
 </body>
 </html>
